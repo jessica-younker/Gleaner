@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Green Gleaner</title>
+	<link rel="stylesheet" type="text/css" href="lib/node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body ng-app="Gleaner">
+	
+	<!-- Remember quotes in quotes -->
+    <div ng-include="'partials/navbar.html'"></div>
+
+    <!-- get ready for routing -->
+    <div class="col-xs-12" ng-view></div>
+
+
+    <script type="text/javascript" src="lib/node_modules/jquery/dist/jquery.min.js"></script>
+	
+	<script type="text/javascript" src="lib/node_modules/firebase/firebase.js"></script>
+	<script type="text/javascript" src="lib/node_modules/angular/angular.min.js"></script>
+	<script type="text/javascript" src="lib/node_modules/angular-route/angular-route.min.js"></script>
+
+
+	<script type="text/jsavascript" src="lib/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	
+	<!-- app specific js -->
+	<script type="text/javascript" src="app/app.js"></script>
+	<script type="text/javascript" src="app/values/fb-creds.js"></script>
+
+	<script type="text/javascript" src="app/controllers/NavCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/RegisterCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/LoginCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/HomeCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/HarvestCardDetailCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/FarmerCardsCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/ChooseAdventureCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/BoxCardDetailCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/AllCardsCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/BoxCardsCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/HarvestCardsCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/NewHarvestCardCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/NewBoxCardCtrl.js"></script>
+
+	<script type="text/javascript" src="app/factories/AuthFactory.js"></script>
+	<script type="text/javascript" src="app/factories/CardFactory.js"></script>
+
+</body>
+</html>
