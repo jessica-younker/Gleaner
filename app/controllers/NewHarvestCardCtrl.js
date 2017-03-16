@@ -1,8 +1,9 @@
 "use strict";
 
-app.controller("NewHarvestCardCtrl", function($scope, CardFactory, $location, AuthFactory){
+app.controller("NewHarvestCardCtrl", function($scope, CardFactory, $location, AuthFactory, FilterFactory){
 	 
-     let user = AuthFactory.getUser();
+    $scope.searchText = FilterFactory;
+    let user = AuthFactory.getUser();
 
      // $scope.title = "New Todo";
      // $scope.btnText = "Submit";

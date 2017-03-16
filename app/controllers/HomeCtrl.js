@@ -1,12 +1,18 @@
 "use strict";
 
-//view with login (navbar), description?, and two big photos w/ buttons where
-// users will choose path based on if they are farmer or eater
-
 app.controller("HomeCtrl", function($scope, $window, AuthFactory, $location, CardFactory){
 	
-console.log("HomeCtrl is loaded");
+	$scope.findBox = function(){
+		$location.url("/cards/all/box");
+	};
 
+	$scope.findHarvest = function(){
+		$location.url("/cards/all/harvest");
+	};
+
+	$scope.shareProduce = function(){
+		$location.url("/chooseyouradventure");
+	};
 
 
 });

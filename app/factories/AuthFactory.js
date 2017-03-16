@@ -49,7 +49,9 @@ app.factory("AuthFactory", function(){
 	};
 
 	let getUser = function(){
+		console.log("currentUser in auth", currentUser);
 		return currentUser;
+
 	};
 
 

@@ -1,3 +1,8 @@
 "use strict";
 
-//view of all produce opportunities
+app.controller("AllCardsCtrl", function($scope, $window){
+
+// =
+
+
+});
