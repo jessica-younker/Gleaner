@@ -74,6 +74,16 @@ app.config(function($routeProvider){
         controller: "FarmerCardsCtrl",
         resolve: {isAuth}
     }).
+    when("/cards/:cardId/edit/harvest", {
+        templateUrl: "partials/new-harvest-card.html",
+        controller: "EditHarvestCtrl",
+        resolve: {isAuth}
+    }).
+    when("/cards/:cardId/edit/box", {
+        templateUrl: "partials/new-box-card.html",
+        controller: "EditBoxCtrl",
+        resolve: {isAuth}
+    }).
     otherwise("/login");
 });
 

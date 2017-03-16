@@ -4,10 +4,10 @@ app.controller("NewBoxCardCtrl", function($scope, CardFactory, AuthFactory, $loc
 
 	let user = AuthFactory.getUser();
 
-     // $scope.title = "New Todo";
-     // $scope.btnText = "Submit";
+     $scope.title = "New Box Listing";
+     $scope.btnText = "Post Listing";
      
-     $scope.newBoxCard = {
+     $scope.newCard = {
 	 	// img: ?
 	 	produce: "",
 	 	boxSize: "",

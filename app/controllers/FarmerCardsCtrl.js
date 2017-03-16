@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("FarmerCardsCtrl", function($scope, CardFactory, AuthFactory, $location){
+app.controller("FarmerCardsCtrl", function($scope, CardFactory, AuthFactory, $location, $routeParams){
 	//control for viewing specific farmer's cards for editing
 	let user = AuthFactory.getUser();
 	$scope.farmer = user;
@@ -28,14 +28,19 @@ app.controller("FarmerCardsCtrl", function($scope, CardFactory, AuthFactory, $lo
 	};
 
 	$scope.editCard = function(cardId){
-		if (card is a box)
-		$location.url("/cards/new/box");
-		else 
-		$location.url("/cards/new/harvest");
+		$routeParams.cardId = cardId;
+		
+		CardFactory.getSingleCard($routeParams.cardId)
+		.then(function successCallback(response){
+			$scope.newCard = response;
+			console.log("$scope.newBoxCard", $scope.newCard);
+			if ("cost" in $scope.newCard) {
+				$location.url(`/cards/${cardId}/edit/box`);
+			} else {
+				$location.url(`/cards/${cardId}/edit/harvest`);
+			}
+		});
 	};
-
-
-	// CardFactory.editCard();
 
 
 
