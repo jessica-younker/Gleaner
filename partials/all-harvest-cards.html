@@ -1,0 +1,13 @@
+<h3>All Harvest Cards<h3>
+
+<div ng-repeat="card in cards | filter: {zipCode: ''} | orderBy: 'produce'">
+  <div class="panel panel-default">
+    <div class="panel-body">
+ 
+      <div class="col-xs-7">{{card.produce}}</a></div>
+      <div class="col-xs-2">{{card.amount}}</div>
+      <div class="col-xs-1">{{card.date}}</div>
+      <div class="col-xs-1"><button class="btn btn-danger" ng-click="itemDelete(card.id)">X</button></div>
+    </div>
+  </div>
+</div>

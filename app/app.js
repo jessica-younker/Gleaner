@@ -51,7 +51,7 @@ app.config(function($routeProvider){
     }).
     when("/cards/all/box", {
         templateUrl: "partials/all-box-cards.html",
-        controller: "NewBoxCardCtrl",
+        controller: "BoxCardsCtrl",
         resolve: {isAuth}
     }).
     when("/cards/new/harvest", {
@@ -64,7 +64,17 @@ app.config(function($routeProvider){
         controller: "NewBoxCardCtrl",
         resolve: {isAuth}
     }).
-    otherwise('/');
+    when("/boxoharvest", {
+        templateUrl: "partials/box-o-harvest.html",
+        controller: "BoxOHarvestCtrl",
+        resolve: {isAuth}
+    }).
+    when("/farmerscards", {
+        templateUrl: "partials/farmer-cards.html",
+        controller: "FarmerCardsCtrl",
+        resolve: {isAuth}
+    }).
+    otherwise("/login");
 });
 
 //run when the app loads

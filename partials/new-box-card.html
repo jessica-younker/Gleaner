@@ -1,0 +1,50 @@
+<h1>new produce box form</h1>
+
+<form>
+	<!--     <img src=""> -->
+  <div class="form-group">
+    <label>Produce in box</label>
+    <!-- TODO: Hook up this form to our JS for submitting -->
+    <input type="text" class="form-control" placeholder="mixed greens, small beets, etc" ng-model="newBoxCard.produce" />
+  </div>
+  <div class="form-group">
+    <label>Box Size</label>
+    <!-- TODO: Hook up this form to our JS for submitting -->
+    <input type="text" class="form-control" placeholder="1 bushel, 5 pounds, etc" ng-model="newBoxCard.boxSize" />
+  </div>
+  <div class="form-group">
+    <label>Pick-Up Location</label>
+    <input type="text" class="form-control" placeholder="1234 Main Street 49626" ng-model="newBoxCard.pickUp"/>
+  </div>
+  <div class="form-group">
+    <label>Pick-Up Time</label>
+    <input type="text" class="form-control" placeholder="6-8am, before 3pm, etc" ng-model="newBoxCard.time" />
+  </div>
+    <div class="form-group">
+    <label>Pick-Up Date</label>
+    <input type="text" class="form-control" placeholder="3/7/09, etc" ng-model="newBoxCard.date" />
+  </div>
+  <div class="form-group">
+    <label>Cost per Box</label>
+    <input type="text" class="form-control" placeholder="$20, etc" ng-model="newBoxCard.cost" />
+  </div>
+  <div class="form-group">
+    <label>Number Available</label>
+    <input type="text" class="form-control" placeholder="10, 20, unlimited" ng-model="newBoxCard.numberAvailable" />
+  </div>
+    <div class="form-group">
+    <label>Order Deadline</label>
+    <input type="text" class="form-control" placeholder="4/15/17, etc" ng-model="newBoxCard.orderBy" />
+  </div>
+  <div class="form-group">
+    <label>Farm Name</label>
+    <input type="text" class="form-control" placeholder="Windy Acres" ng-model="newHarvestCard.farmName" />
+  </div>
+
+  <div class="form-group">
+    <label>The Fine Print</label>
+    <input type="text" class="form-control" placeholder="some leaves are holey, certified organic, etc" ng-model="newBoxCard.finePrint"/>
+  </div>
+  <!-- TODO: bind this button to a function -->
+  <button class="btn btn-default" ng-click="addNewCard()">Post Produce Box Listing</button>
+</form>

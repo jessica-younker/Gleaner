@@ -1,1 +1,18 @@
 <h1>see individual farmer's cards</h1>
+
+<div ng-repeat="card in farmersCards | orderBy: 'produce'">
+  <div class="panel panel-default">
+    <div class="panel-body">
+ 
+      <div class="col-xs-7">{{card.produce}}</a></div>
+      <div class="col-xs-2">{{card.amount}}</div>
+      <div class="col-xs-1">{{card.date}}</div>
+      <div class="col-xs-1"><button class="btn btn-danger" ng-click="deleteListing(card.id)">Delete Listing</button></div>
+      <br>
+      <div class="col-xs-1" ng-click="editCard()"><button class="btn btn-info">Edit Listing</button></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- have link to add new listing on this page -->

@@ -3,15 +3,20 @@ console.log("hello from cardfactory");
 
 app.factory("CardFactory", ($q, $http, FBCreds) => {
 
-	let getCard = (user) => {
-		console.log("hello from IN getCard");
-		let cards = [];
+	let getCards = (user) => {
+		console.log("hello from IN getCards");
+	
 		return $q((resolve, reject) => {
 			console.log("cards url", `${FBCreds.databaseURL}/cards.json`);
 			$http.get(`${FBCreds.databaseURL}/cards.json`)
 			.then((cardObject) => {
+				let cards = [];
 				let cardCollection = cardObject.data;
 				console.log("cardCollection", cardCollection);
+				Object.keys(cardCollection).forEach((key) => {
+					cardCollection[key].id = key;
+					cards.push(cardCollection[key]);
+				});
 				resolve(cards);
 			})
 			.catch((error) => {
@@ -72,7 +77,7 @@ app.factory("CardFactory", ($q, $http, FBCreds) => {
 		});
 	};
 
-	return {getCard, postCard, deleteCard, getSingleCard, updateCard};
+	return {getCards, postCard, deleteCard, getSingleCard, updateCard};
 
 });
 
