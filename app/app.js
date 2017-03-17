@@ -101,6 +101,16 @@ app.config(function($routeProvider){
         controller: "GuildFormCtrl",
         resolve: {isAuth}
     }).
+    when("/guildform/:user/edit", {
+        templateUrl: "partials/guild-form.html",
+        controller: "EditGleanerCtrl",
+        resolve: {isAuth}
+    }).
+    when("/rategleaner", {
+        templateUrl: "partials/rater.html",
+        controller: "RateCtrl",
+        resolve: {isAuth}
+    }).
     otherwise("/login");
 });
 

@@ -4,7 +4,8 @@ app.controller("GuildFormCtrl", function($scope, $window, AuthFactory, $location
 //sign up button clicks to form
 //click on gleaner card gets detailed view w/ ability to add "voucher" and comment if you are a farmer
 let user = AuthFactory.getUser();
-     
+     $scope.title = "Gleaner Guild Sign-Up";
+
      $scope.newCard = {
 	 	// img: ?
 	 	name: "",

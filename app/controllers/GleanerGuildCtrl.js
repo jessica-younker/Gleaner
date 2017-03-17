@@ -33,6 +33,10 @@ let user = AuthFactory.getUser();
 	    
 	};
 
+	$scope.rateGleaner = function(){
+		$location.url("#!/rategleaner");
+	};
+
 	///add editing
 	//add rating functionality
 

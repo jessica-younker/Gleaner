@@ -8,9 +8,10 @@ app.controller("EditHarvestCtrl", function($scope, CardFactory, AuthFactory, $lo
 	$scope.btnText = "Update";
 	$scope.newCard = {};
 
+  
 	CardFactory.getSingleCard($routeParams.cardId)
   	.then(function successCallback(response){
-     
+ 
     	$scope.newCard = response;
   	});
     

@@ -60,6 +60,8 @@ app.factory("CardFactory", ($q, $http, FBCreds) => {
 		});
 	};
 
+
+
 	let updateCard = (cardId, editedCard) => {
 		//Properties with leading $$ characters will be stripped since AngularJS uses this notation internally.
   	console.log("angularJSON", angular.toJson(editedCard));
