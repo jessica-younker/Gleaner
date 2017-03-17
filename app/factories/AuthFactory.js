@@ -1,7 +1,7 @@
 "use strict";
 console.log("hello from authfactory");
 
-app.factory("AuthFactory", function(){
+app.factory("AuthFactory", function($location){
 
 	let currentUser = null;
 	console.log("currentUser defined at start of page", currentUser);
@@ -42,6 +42,7 @@ app.factory("AuthFactory", function(){
 					console.log("user.uid=", currentUser);
 					resolve(true);
 				}else {
+            		// $location.url("/loginplz");
 					resolve(false);
 				}
 			});

@@ -1,16 +1,18 @@
 "use strict";
-
+// +16159134302
 var app = angular.module("Gleaner", ["ngRoute"]);
 
 let isAuth = (AuthFactory) => new Promise ( (resolve, reject) => {
   console.log("running isAuth");
     AuthFactory.isAuthenticated()
     .then ( (userExists) => {
+        //welcome {{name}} on homepage
     console.log("userExists", userExists);
         if (userExists){
       console.log("Authenticated, go ahead.");
             resolve();
         }else {
+
       console.log("Authentication rejected, go away.");
             reject();
         }
@@ -82,6 +84,21 @@ app.config(function($routeProvider){
     when("/cards/:cardId/edit/box", {
         templateUrl: "partials/new-box-card.html",
         controller: "EditBoxCtrl",
+        resolve: {isAuth}
+    }).
+    when("/gleanerguild", {
+        templateUrl: "partials/gleaner-guild.html",
+        controller: "GleanerGuildCtrl",
+        resolve: {isAuth}
+    }).
+    when("/loginplz", {
+        templateUrl: "partials/please-login.html",
+        controller: "PlzLoginCtrl",
+        resolve: {isAuth}
+    }).
+    when("/guildform", {
+        templateUrl: "partials/guild-form.html",
+        controller: "GuildFormCtrl",
         resolve: {isAuth}
     }).
     otherwise("/login");
