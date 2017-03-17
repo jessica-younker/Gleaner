@@ -1,0 +1,22 @@
+<h1>Gleaner Guild Sign-Up</h1>
+
+<form>
+	<!--     <img src=""> -->
+  <div class="form-group">
+    <label>Name</label>
+    <input type="text" class="form-control" placeholder="your name" ng-model="newCard.name"/>
+  </div>
+  <div class="form-group">
+    <label>What is your gleaning experience?</label>
+    <input type="text" class="form-control" placeholder="special skills, experiences" ng-model="newCard.skill" />
+  </div>
+  <div class="form-group">
+    <label>Phone Number</label>
+    <input type="text" class="form-control" placeholder="best phone to get in touch with hot gleaning opportunities" ng-model="newCard.contact"/>
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+    <input type="text" class="form-control" placeholder="best email for occasional messages" ng-model="newCard.contact"/>
+  </div>
+  <button class="btn btn-default" ng-click="addNewCard()">Submit</button>
+</form>
