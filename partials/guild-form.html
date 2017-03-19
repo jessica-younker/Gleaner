@@ -12,12 +12,15 @@
   </div>
   <div class="form-group">
     <label>Phone Number</label>
-    <input type="text" class="form-control" placeholder="best phone to get in touch with hot gleaning opportunities" ng-model="newCard.contact"/>
+    <input type="text" class="form-control" placeholder="best phone to get in touch with hot gleaning opportunities" ng-model="newCard.phone"/>
   </div>
   <div class="form-group">
     <label>Email</label>
     <input type="text" class="form-control" placeholder="best email for occasional messages" ng-model="newCard.contact"/>
   </div>
   <button class="btn btn-default" ng-click="addNewCard()">{{btnText}}</button>
-  <button class="btn btn-default">Delete Gleaner</button>
+  <button class="btn btn-default" ng-click="deleteCard(card.id)">Delete Gleaner</button>
 </form>
+
+<!-- gleaner rating
+comment window -->

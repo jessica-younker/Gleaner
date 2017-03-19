@@ -5,35 +5,39 @@ app.controller("EditGleanerCtrl", function($scope, $window, AuthFactory, $locati
 //click on gleaner card gets detailed view w/ ability to add "voucher" and comment if you are a farmer
 let user = AuthFactory.getUser();
      
-     $scope.title = "Edit Gleaner";
-     $scope.btnText = "Update";
-     $scope.newCard = {};
+    $scope.title = "Edit Gleaner";
+    $scope.btnText = "Update";
+    $scope.newCard = {};
 
-     console.log("cardID TESSSST", $routeParams.user);  
-    CardFactory.getSingleCard($routeParams.cardId, $routeParams.user)
-        .then(function successCallback(response){
-        $scope.newCard = response;
-        console.log("response in edit gleaner", response);
-    });
     
-	 $scope.addNewCard = function(){
-        CardFactory.updateCard($routeParams.user, $scope.newCard)
+    CardFactory.getCards()
+        .then(function(cardCollection) {
+            $scope.cards = cardCollection;
+            console.log("$scope.cards", $scope.cards);
+            $scope.newCard = $scope.cards.find(function(card) {
+                return card.uid === user && "skill" in card;  
+            }); 
+            console.log("$scope.gleanerCard", $scope.newCard);
+        });
+    
+	$scope.addNewCard = function(){
+        CardFactory.updateCard($scope.newCard.id, $scope.newCard)
         .then(function successCallback(response) {
         	$location.url("/gleanerguild");
         });
     };
+    
+    $scope.deleteCard = function(){
+        CardFactory.deleteCard($scope.newCard.id)
+        .then(function(response){
+            CardFactory.getCards(user).then(function(cardCollection){
+                console.log("$scope.cards", $scope.cards);
+                $scope.cards = cardCollection;
+                $location.url("#!/gleanerguild");
+            });
+        });
+
+    };
 
 
 });
-
-
-
-// $scope.addNewCard = function(){
-//         console.log("add new card");
-//         CardFactory.postCard($scope.newCard)
-//         .then(function(response){
-//             $location.url("/gleanerguild");
-//         });
-//         // console.log("you added a new box card:", $scope.newBoxCard);
-//         // $scope.newCard = {};
-//     };

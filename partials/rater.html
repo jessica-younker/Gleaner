@@ -1,4 +1,33 @@
-<h4>Rate This Gleaner</h4>
+
 
 <!-- 3 radio buttons? one is unfinished compost(potentially great with experience) one is a fox in the henhouse? and one is a wonderful wheelhoe? -->
 <!-- assign each a numerical value, and list average on the gleaner card with link to view all reviews/ratings. -->
+
+<!-- rate this gleaner click grabs card id
+//content add to gleaner's card -->
+
+<h3>Rate {{gleaner}} </h3>
+<h4>Remember your comments are public and intended to help other growers</h4>
+<br>
+<br>
+<form>
+	<!--     <img src=""> -->
+  <div class="form-group">
+	<label>Please choose one of the following ratings:</label>
+	<br>
+	<input type="radio" name="rating" ng-value="4" ng-model="newRating.rating"> Truckload of Manure (couldn't be better!) (<br>
+	<input type="radio" name="rating" ng-value="3" ng-model="newRating.rating"> Unfinished Compost (great potential!)<br> 
+	<input type="radio" name="rating" ng-value="2" ng-model="newRating.rating"> Fresh Air (can't complain)<br>
+	<input type="radio" name="rating" ng-value="1" ng-model="newRating.rating"> Fieldmouse (minor nuisance)<br>
+	<input type="radio" name="rating" ng-value="0" ng-model="newRating.rating"> Fox in the henhouse (bad for business)<br>
+  </div>
+  <div class="form-group">
+    <label>Please enter any comments you have about this gleaner:</label>
+    <input type="text" class="form-control" placeholder="special skills, experiences" ng-model="newRating.comment" />
+  </div>
+  
+  <button class="btn btn-default" ng-click="submitRating(card.id)">Submit Rating</button>
+</form>
+  
+    
+  

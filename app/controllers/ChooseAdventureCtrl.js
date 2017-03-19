@@ -15,36 +15,7 @@ app.controller("ChooseAdventureCtrl", function($scope, $routeParams, CardFactory
 	};
 
 	$scope.showGleanerCard = function(){
-		
-		$routeParams.gleanerId = user;
-		console.log("routeParams.gleanerId", user);
-		CardFactory.getCards()
-		.then(function(cardCollection) {
-			$scope.cards = cardCollection;
-			console.log("$scope.cards", $scope.cards);
-			$scope.gleanerCard = $scope.cards.filter(function(card) {
-				return card.uid === $routeParams.gleanerId && "skill" in card;	
-			});	
-			console.log("$scope.gleanerCard", $scope.gleanerCard);
-			$location.url(`/guildform/${user}/edit`);
-		
-		});
-
-		// $routeParams.gleanerId = user;
-		// console.log("routeParams.gleanerId", user);
-		// CardFactory.getCards()
-		// .then(function(cardCollection) {
-		// 	$scope.cards = cardCollection;
-		// 	console.log("$scope.cards", $scope.cards);
-		// 	$scope.gleanerCard = $scope.cards.filter(function(card) {
-		// 		return card.uid === $routeParams.gleanerId && "skill" in card;	
-		// 	});	
-		// 	console.log("$scope.gleanerCard", $scope.gleanerCard);
-		// 	$location.url(`/guildform/${user}`);
-		
-		// });
-
-
+		$location.url(`/guildform/${user}/edit`);
 	};
 
 });

@@ -106,9 +106,9 @@ app.config(function($routeProvider){
         controller: "EditGleanerCtrl",
         resolve: {isAuth}
     }).
-    when("/rategleaner", {
+    when("/rategleaner/:cardId", {
         templateUrl: "partials/rater.html",
-        controller: "RateCtrl",
+        controller: "RaterCtrl",
         resolve: {isAuth}
     }).
     otherwise("/login");

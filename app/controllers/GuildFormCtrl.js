@@ -5,6 +5,7 @@ app.controller("GuildFormCtrl", function($scope, $window, AuthFactory, $location
 //click on gleaner card gets detailed view w/ ability to add "voucher" and comment if you are a farmer
 let user = AuthFactory.getUser();
      $scope.title = "Gleaner Guild Sign-Up";
+     $scope.btnTxt = "Submit Gleaner";
 
      $scope.newCard = {
 	 	// img: ?
@@ -28,3 +29,6 @@ let user = AuthFactory.getUser();
 
 
 });
+
+//how to limit one gleaner card per user
+//use route params to carry cardid to raterctrl?

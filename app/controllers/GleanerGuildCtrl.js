@@ -7,6 +7,7 @@ app.controller("GleanerGuildCtrl", function($scope, $window, CardFactory, AuthFa
 // iew w/ ability to add "voucher" and comment if you are a farmer
 let user = AuthFactory.getUser();
 
+
 	$scope.signUp = function(){
 		$location.url("/guildform");
 	};
@@ -17,7 +18,6 @@ let user = AuthFactory.getUser();
 		$scope.guildCards = $scope.cards.filter(function(card) {	
 			return "skill" in card;
 		});
-
 	});	
 
 	$scope.deleteListing = function(cardId){
@@ -29,16 +29,15 @@ let user = AuthFactory.getUser();
                 $scope.cards = cardCollection;
                 $location.url("#!/gleanerguild");
             });
-        });
-	    
+        });    
 	};
 
-	$scope.rateGleaner = function(){
-		$location.url("#!/rategleaner");
+	$scope.rateGleaner = function(cardId){
+		console.log("CARDID", cardId);
+		$location.url(`/rategleaner/${cardId}`);
 	};
 
-	///add editing
-	//add rating functionality
+	//gleaner cannot rate herself
 
 		
 });
