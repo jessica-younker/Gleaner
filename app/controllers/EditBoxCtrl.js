@@ -11,11 +11,11 @@ app.controller("EditBoxCtrl", function($scope, CardFactory, AuthFactory, $locati
 	CardFactory.getSingleCard($routeParams.cardId)
 		.then(function successCallback(response){
 			console.log("getSingleItemresponse", response);
-			$scope.newCard = response;
+			$scope.card = response;
 	});
 
 	$scope.addNewCard = function(){
-		CardFactory.updateCard($routeParams.cardId, $scope.newCard)
+		CardFactory.updateCard($routeParams.cardId, $scope.card)
 		.then(function successCallback(response) {
 		console.log(response);
 		$location.url("/farmerscards");

@@ -27,8 +27,7 @@ app.factory("CardFactory", ($q, $http, FBCreds) => {
 
 	let postCard = (newCard) => {
 		return $q((resolve, reject) => {
-			$http.post(`${FBCreds.databaseURL}/cards.json`,
-				JSON.stringify(newCard))
+			$http.post(`${FBCreds.databaseURL}/cards.json`, JSON.stringify(newCard))
 			.then((ObjectFromFirebase) => {
 				resolve(ObjectFromFirebase);
 			})

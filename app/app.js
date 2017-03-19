@@ -1,6 +1,6 @@
 "use strict";
 // +16159134302
-var app = angular.module("Gleaner", ["ngRoute"]);
+var app = angular.module("Gleaner", ["ngRoute", "base64"]);
 
 let isAuth = (AuthFactory) => new Promise ( (resolve, reject) => {
   console.log("running isAuth");
@@ -41,11 +41,7 @@ app.config(function($routeProvider){
         templateUrl: "partials/choose-adventure.html",
         controller: "ChooseAdventureCtrl"
     }).
-    // might not need this route:
-    when("/cards/all", {
-        templateUrl: "partials/all-cards.html",
-        controller: "AllCardCtrl"
-    }).
+
     when("/cards/all/harvest", {
         templateUrl: "partials/all-harvest-cards.html",
         controller: "HarvestCardsCtrl",
@@ -109,6 +105,16 @@ app.config(function($routeProvider){
     when("/rategleaner/:cardId", {
         templateUrl: "partials/rater.html",
         controller: "RaterCtrl",
+        resolve: {isAuth}
+    }).
+    when("/cards/all/box/:cardId", {
+        templateUrl: "partials/box-card-detail.html",
+        controller: "BoxCardDetailCtrl",
+        resolve: {isAuth}
+    }).
+    when("/cards/all/harvest/:cardId", {
+        templateUrl: "partials/harvest-card-detail.html",
+        controller: "HarvestCardDetailCtrl",
         resolve: {isAuth}
     }).
     otherwise("/login");

@@ -1,3 +1,11 @@
 "use strict";
 
-//interact with box cards
+
+app.controller("BoxCardDetailCtrl", function($scope, CardFactory, $location, AuthFactory, FilterFactory){
+
+	let user = AuthFactory.getUser();
+    
+
+    
+	
+});

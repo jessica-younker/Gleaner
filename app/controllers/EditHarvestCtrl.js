@@ -12,11 +12,11 @@ app.controller("EditHarvestCtrl", function($scope, CardFactory, AuthFactory, $lo
 	CardFactory.getSingleCard($routeParams.cardId)
   	.then(function successCallback(response){
  
-    	$scope.newCard = response;
+    	$scope.card = response;
   	});
     
   	$scope.addNewCard = function(){
-    	CardFactory.updateCard($routeParams.cardId, $scope.newCard)
+    	CardFactory.updateCard($routeParams.cardId, $scope.card)
     	.then(function successCallback(response) {
       	$location.url("/farmerscards");
     	});
