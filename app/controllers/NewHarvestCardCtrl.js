@@ -48,7 +48,7 @@ app.controller("NewHarvestCardCtrl", function($scope, CardFactory, $location, Au
                     return card.phone;
                 });
      
-                let message = "Hello Gleaner! There is a hot new harvest opportunity. Here's the info:" + `http://localhost:8080/#!/cards/all/harvest/${response.data.name}`;
+                let message = "Hello Gleaner! There is a hot new harvest opportunity. Here's the info: " + `http://localhost:8080/#!/cards/all/harvest/${response.data.name}`;
                 console.log ("message", message);
                 phoneArray.forEach(function(phone){
                     TwilioFactory.sendSMS(phone, message);

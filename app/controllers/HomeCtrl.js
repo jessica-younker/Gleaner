@@ -14,5 +14,9 @@ app.controller("HomeCtrl", function($scope, $window, AuthFactory, $location, Car
 		$location.url("/chooseyouradventure");
 	};
 
+	$scope.joinGuild = function(){
+		$location.url("/gleanerguild");
+	};
+
 
 });
