@@ -4,27 +4,27 @@ app.controller("NewBoxCardCtrl", function($scope, CardFactory, AuthFactory, $loc
 
 	let user = AuthFactory.getUser();
 
-     $scope.title = "New Box Listing";
-     $scope.btnText = "Post Listing";
+    $scope.title = "New Box Listing";
+    $scope.btnText = "Post Listing";
      
-     $scope.newCard = {
-	 	// img: ?
+    $scope.newCard = {
+	 	image: "",
 	 	produce: "",
 	 	boxSize: "",
 	 	pickUp: "",
 	 	date: "",
 	 	time: "",
 	 	cost: "",
-	 	numberAvailable: "",
+	 	numberAvailable: null,
 	 	orderBy: "",
 	 	farmName: "",
 	 	finePrint: "",
+	 	reserved: null,
         uid: user
 	 };
 	 //ability to autodeduct numberavailable w/signups
 
-
-	 $scope.addNewCard = function(){
+	$scope.addNewCard = function(){
         console.log("add new card");
         CardFactory.postCard($scope.newCard)
         .then(function(response){

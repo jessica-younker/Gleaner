@@ -1,2 +1,28 @@
-<h2>detail of box pick up opp</h2>
+<h2>Details about this {{card.produce}} listing</h2>
 
+<content>
+  <card class="box-card-detail">
+    <div class="card-detail-image">  
+      <img src={{card.image}} class="card-detail-image" alt="image">
+    </div>
+    <div class="card-info">
+		<span class="headline">What: {{card.produce}}</span><br>
+		<span class="headline">Farm Name: {{card.farmName}}</span><br>
+		<span class="headline">Fine Print: {{card.finePrint}}</span><br>
+		<span class="headline">How much: {{card.boxSize}}</span><br>
+		<span class="headline">PickUp Location: {{card.pickUp}}</span><br>
+		<span class="headline">PickUp Date: {{card.date}}</span><br>
+		<span class="headline">PickUp Time: {{card.time}}</span><br>
+		<span class="headline">Cost: {{card.cost}}</span><br>
+		<span class="headline">Number of boxes left (out of {{card.numberAvailable}}): </span><br>
+		<span class="headline">Order Deadline: {{card.orderBy}}</span><br>
+		
+		<span class="headline">{{card.produce}}</span><br>
+		
+  		<button class="btn btn-default" ng-click="reserveBox(card.id)">Reserve A Box!</button>
+     	<button class="btn btn-default" ng-click="editBox(card.id)">Edit Listing</button>
+     	<button class="btn btn-default" ng-click="deleteBox(card.id)">Delete Box</button>
+      
+    </div>
+  </card>
+</content>

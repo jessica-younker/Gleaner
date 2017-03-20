@@ -1,14 +1,64 @@
 <h3>All Produce Box Opps Here</h3>
 
+<input-container>
+   	<input id="search-input" type="text" class="fa fa-search form-control" placeholder="Search Boxes..." ng-model="searchText.search">
+</input-container>
+<br>
+
 <div ng-repeat="card in cards | filter: {boxSize: ''} | orderBy: 'produce'">
-  <div class="panel panel-default">
-    <div class="panel-body">
- 
-      <div class="col-xs-7"><a ng-href="#!/cards/all/box/{{card.id}}">{{card.produce}}</a></div>
-      <div class="col-xs-2">{{card.boxSize}}</div>
-      <div class="col-xs-1">{{card.pickUp}}</div>
-    </div>
-  </div>
+	<div class="row">
+	  <div class="row-md-4">
+			<div class ="card">
+				<img class="image" src="{{card.image}}"> </br>
+				<div class="col-md-5">{{card.produce}}</div>
+				<div class="col-xs-5">{{card.pickUp}}</div>{{description}} </br>
+				<button class="btn btn-info" ng-click="cardDetails(card.id)">Listing Details</button>
+			</div>
+	  </div>
+	  <!-- <div class="col-md-4">
+	  		<div class ="card">
+				<img class="image" src="{{image}}"> </br>
+				<div class="col-md-5"><a ng-href="#!/cards/all/box/{{card.id}}">{{card.produce}}</a></div>
+				<div class="col-xs-5">{{card.pickUp}}</div>{{description}} </br>
+			</div>
+	  </div>
+	  <div class="col-md-4">
+	  		<div class ="card">
+		  		<img class="image" src="{{image}}"> </br>
+				<div class="col-md-5"><a ng-href="#!/cards/all/box/{{card.id}}">{{card.produce}}</a></div>
+				<div class="col-xs-5">{{card.pickUp}}</div>{{description}} </br>
+			</div>
+	  </div> -->
+	</div>
 </div>
-
-
+ 	<!-- <div class="panel panel-default">
+    	<div class="panel-body">
+			<div class="container-fluid" id="wrapper">
+				<div id="container">
+					<div class="row"> -->
+						<!-- <div class="thumbnail col-sm-6 col-md-4 js-card"> -->
+							<!-- <div class="text">
+								<img class="image" src="{{image}}"> </br>
+								<div class="col-md-5"><a ng-href="#!/cards/all/box/{{card.id}}">{{card.produce}}</a></div>
+								<div class="col-xs-5">{{card.pickUp}}</div>{{description}} </br>
+							</div> -->
+<!-- 						<div class="thumbnail col-sm-6 col-md-4 js-card">	
+ -->							<!-- <div class="text">
+								<img class="image" src="{{image}}"> </br>
+								<div class="col-md-5"><a ng-href="#!/cards/all/box/{{card.id}}">{{card.produce}}</a></div>
+								<div class="col-xs-5">{{card.pickUp}}</div>{{description}} </br>
+							</div> -->
+<!-- 						<div class="thumbnail col-sm-6 col-md-4 js-card">
+ -->							<!-- <div class="text">
+								<img class="image" src="{{image}}"> </br>
+								<div class="col-md-5"><a ng-href="#!/cards/all/box/{{card.id}}">{{card.produce}}</a></div>
+								<div class="col-xs-5">{{card.pickUp}}</div>{{description}} </br>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+ -->

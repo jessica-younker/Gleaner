@@ -32,9 +32,14 @@
     <label>The Fine Print</label>
     <input type="text" class="form-control" placeholder="must harvest all or nothing, don't step on neighboring rows, pile residues, etc" ng-model="newCard.finePrint"/>
   </div>
-  <!-- TODO: bind this button to a function -->
-  <button class="btn btn-default" ng-click="addNewCard()">{{btnText}}</button>
+  <input-container class="icon-float block">
+    <label>Add an Image URL</label>
+    <input ng-model="newCard.image" type="text" placeholder="Add URL for image">  
+  </input-container>
   <br>
-  <label>Click to Submit and Text Gleaner Guild Instantly:</label>
+  <br>  
+  <button class="btn btn-default" ng-click="addNewCard()">{{btnText}}</button>
+ 
+  <label>-OR- Click Orange Button to Submit and Text Gleaner Guild Instantly:</label>
   <button class="btn btn-warning" ng-click="textGuild()">{{btnText2}}</button>
 </form>
