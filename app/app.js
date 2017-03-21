@@ -117,6 +117,16 @@ app.config(function($routeProvider){
         controller: "HarvestCardDetailCtrl",
         resolve: {isAuth}
     }).
+    when("/success", {
+        templateUrl: "partials/success.html",
+        controller: "SuccessCtrl",
+        resolve: {isAuth}
+    }).
+    when("/email", {
+        templateUrl: "partials/email.html",
+        controller: "EmailCtrl",
+        resolve: {isAuth}
+    }).
     otherwise("/login");
 });
 

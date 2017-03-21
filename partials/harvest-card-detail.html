@@ -2,3 +2,30 @@
 
 <label>Confirm this havest opportunity instantly!</label>
 <button type="button" class="btn btn-success" ng-click="textGrower()">Text Grower</button>	
+
+<content>
+  <card class="harvest-card-detail">
+    <div class="card-detail-image">  
+      <img src={{card.image}} class="card-detail-image" alt="image">
+    </div>
+    <div class="card-info">
+    	<label>What: </label>
+		<span class="headline">{{card.produce}}</span><br>
+		<label>Farm Name: </label>
+		<span class="headline">{{card.farmName}}</span><br>
+		<label>Zip Code: </label>
+		<span class="headline">{{card.zipCode}}</span><br>
+		<label>Fine Print: </label>
+		<span class="headline">{{card.finePrint}}</span><br>
+		<label>How much: </label>
+		<span class="headline">{{card.amount}}</span><br>
+		<label>Harvest Date: </label>
+		<span class="headline">{{card.date}}</span><br>
+		<label>Harvest Time: </label>
+		<span class="headline">{{card.time}}</span><br>
+		
+  		<button class="btn btn-default" ng-click="askQuestion(card.id)">Ask A Question</button>
+      
+    </div>
+  </card>
+</content>

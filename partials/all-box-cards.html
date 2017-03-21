@@ -1,18 +1,21 @@
-<h3>All Produce Box Opps Here</h3>
+<h3>Available Produce Boxes</h3>
 
 <input-container>
    	<input id="search-input" type="text" class="fa fa-search form-control" placeholder="Search Boxes..." ng-model="searchText.search">
 </input-container>
 <br>
 
-<div ng-repeat="card in cards | filter: {boxSize: ''} | orderBy: 'produce'">
-	<div class="row">
-	  <div class="row-md-4">
+<!-- <div >	
+	<div class="row-fluid"> -->
+	  <div class="col-md-3"  ng-repeat="card in cards | filter: {boxSize: ''} | orderBy: 'produce'">
 			<div class ="card">
 				<img class="image" src="{{card.image}}"> </br>
-				<div class="col-md-5">{{card.produce}}</div>
-				<div class="col-xs-5">{{card.pickUp}}</div>{{description}} </br>
-				<button class="btn btn-info" ng-click="cardDetails(card.id)">Listing Details</button>
+				
+				<div><h4>Produce: </h4> {{card.produce}}</div>
+
+				<div><h4>Location: </h4>{{card.pickUp}}</div>
+
+				<button class="btn btn-info listing" ng-click="cardDetails(card.id)">Listing Details</button>
 			</div>
 	  </div>
 	  <!-- <div class="col-md-4">

@@ -6,22 +6,28 @@
       <img src={{card.image}} class="card-detail-image" alt="image">
     </div>
     <div class="card-info">
-		<span class="headline">What: {{card.produce}}</span><br>
-		<span class="headline">Farm Name: {{card.farmName}}</span><br>
-		<span class="headline">Fine Print: {{card.finePrint}}</span><br>
-		<span class="headline">How much: {{card.boxSize}}</span><br>
-		<span class="headline">PickUp Location: {{card.pickUp}}</span><br>
-		<span class="headline">PickUp Date: {{card.date}}</span><br>
-		<span class="headline">PickUp Time: {{card.time}}</span><br>
-		<span class="headline">Cost: {{card.cost}}</span><br>
-		<span class="headline">Number of boxes left (out of {{card.numberAvailable}}): </span><br>
-		<span class="headline">Order Deadline: {{card.orderBy}}</span><br>
-		
+    	<label>What: </label>
 		<span class="headline">{{card.produce}}</span><br>
+		<label>Farm Name: </label>
+		<span class="headline">{{card.farmName}}</span><br>
+		<label>Fine Print: </label>
+		<span class="headline">{{card.finePrint}}</span><br>
+		<label>How much: </label>
+		<span class="headline">{{card.boxSize}}</span><br>
+		<label>Pick-up Location: </label>
+		<span class="headline">{{card.pickUp}}</span><br>
+		<label>Pick-up Date: </label>
+		<span class="headline">{{card.date}}</span><br>
+		<label>Pick-up Time: </label>
+		<span class="headline">{{card.time}}</span><br>
+		<label>Cost: </label>
+		<span class="headline">{{card.cost}}</span><br>
+		<!-- <label>Number of Boxes Left (out of {{card.numberAvailable}}): </label>
+		<span class="headline"> </span><br> -->
+		<label>Order Deadline: </label>
+		<span class="headline">{{card.orderBy}}</span><br>
 		
   		<button class="btn btn-default" ng-click="reserveBox(card.id)">Reserve A Box!</button>
-     	<button class="btn btn-default" ng-click="editBox(card.id)">Edit Listing</button>
-     	<button class="btn btn-default" ng-click="deleteBox(card.id)">Delete Box</button>
       
     </div>
   </card>
