@@ -33,7 +33,7 @@ let user = AuthFactory.getUser();
 	};
 
 	$scope.rateGleaner = function(cardId){
-		console.log("CARDID", cardId);
+		console.log("CARDID.uid", cardId.uid);
 		$location.url(`/rategleaner/${cardId}`);
 	};
 

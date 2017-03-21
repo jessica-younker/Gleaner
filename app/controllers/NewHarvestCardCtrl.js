@@ -1,4 +1,4 @@
-"use strict";
+    "use strict";
 
 app.controller("NewHarvestCardCtrl", function($scope, CardFactory, $location, AuthFactory, FilterFactory, TwilioFactory){
 	 
