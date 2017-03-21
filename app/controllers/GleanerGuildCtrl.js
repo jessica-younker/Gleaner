@@ -29,9 +29,14 @@ let user = AuthFactory.getUser();
 	};
 
 	$scope.rateGleaner = function(cardId){
-		console.log("CARDID.uid", cardId.uid);
 		$location.url(`/rategleaner/${cardId}`);
 	};
+
+	$scope.moreComments = function(cardId){
+		$location.url(`/morecomments/${cardId}`);
+	};
+
+	// console.log($scope.)
 
 	//gleaner cannot rate herself
 

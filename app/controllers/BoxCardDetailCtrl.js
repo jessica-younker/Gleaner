@@ -14,16 +14,23 @@ app.controller("BoxCardDetailCtrl", function($scope, CardFactory, $location, Aut
 
 	$scope.reserveBox = function(){
 		console.log("you clicked reserve");
-		$location.url("/success");
-		// CardFactory.getSingleCard($routeParams.cardId)
-		// .then(function successCallback(response){
-		// 	console.log("getSingleItemresponse", response);
-		// 	$scope.card = response;
-
+		CardFactory.getSingleCard($routeParams.cardId)
+		.then(function successCallback(response){
+			$scope.newCard = response;
+			let amount = response.numberAvailable;
+			$scope.newCard.numberAvailable = amount - 1;
+			console.log ("updatedAmount", $scope.newCard.numberAvailable);
+			console.log("$scope.newCard", $scope.newCard);
 			
-		// });
-		
-	};
+			CardFactory.updateCard($routeParams.cardId, $scope.newCard)
+			.then(function successCallback(response) {
+			console.log("now look here", response);
+			$location.url("/success");
+			});
+		});
+
+	
+	};		
     
     
 	

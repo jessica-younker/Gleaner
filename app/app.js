@@ -127,6 +127,11 @@ app.config(function($routeProvider){
         controller: "EmailCtrl",
         resolve: {isAuth}
     }).
+    when("/morecomments/:cardId", {
+        templateUrl: "partials/more-comments.html",
+        controller: "CommentCtrl",
+        resolve: {isAuth}
+    }).
     otherwise("/login");
 });
 
