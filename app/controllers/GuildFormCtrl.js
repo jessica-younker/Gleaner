@@ -14,6 +14,7 @@ app.controller("GuildFormCtrl", function($scope, $window, AuthFactory, $location
     	 	phone: "",
             email: "",
             rating: "",
+            comment: "",
             uid: user
     	 };
 

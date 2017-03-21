@@ -1,10 +1,6 @@
 "use strict";
 app.controller("GleanerGuildCtrl", function($scope, $window, CardFactory, AuthFactory, $location){
 
-//sign up button clicks to form
-// all gleaners displayed
-//click on gleaner card gets detailed v
-// iew w/ ability to add "voucher" and comment if you are a farmer
 let user = AuthFactory.getUser();
 
 
