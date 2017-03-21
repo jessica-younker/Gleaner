@@ -17,7 +17,9 @@
       <br>
       <!-- show hide this button if logged in/not -->
       <h4>This Gleaner has an average rating of {{card.rating}}/4</h4>
-      <a class="btn btn-info" href="/#!/home">Read Comments About this Gleaner</a>
+      <div>{{card.comment}}</div>
+      <br>
+      <div class="col-xs-1" ><button class="btn btn-success" ng-click="moreComments(card.id)">Read comments about this Gleaner</button></div>
       <br>
       <div class="col-xs-1" ><button class="btn btn-info" ng-click="rateGleaner(card.id)">Rate this gleaner!</button></div>
     </div>
