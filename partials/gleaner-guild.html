@@ -9,15 +9,16 @@
   <div class="panel panel-default">
     <div class="panel-body">
  
-      <div class="col-xs-7">{{card.name}}</div>
-      <div class="col-xs-2">{{card.skill}}</div>
-      <div class="col-xs-1">{{card.phone}}</div>
-      <div class="col-xs-1">{{card.email}}</div>
+      <div class="col-xs-7">Name: {{card.name}}</div>
+      <div class="col-xs-2">Special Skills: {{card.skill}}</div>
+      <div class="col-xs-1">Phone: {{card.phone}}</div>
+      <div class="col-xs-1">Email: {{card.email}}</div>
       
       <br>
       <!-- show hide this button if logged in/not -->
-      <h4>This Gleaner has an average rating of: {{card.rating}}</h4>
-      <a class="btn btn-info" href="/#!/home">See More Comments</a>
+      <h4>This Gleaner has an average rating of {{card.rating}}/4</h4>
+      <a class="btn btn-info" href="/#!/home">Read Comments About this Gleaner</a>
+      <br>
       <div class="col-xs-1" ><button class="btn btn-info" ng-click="rateGleaner(card.id)">Rate this gleaner!</button></div>
     </div>
   </div>

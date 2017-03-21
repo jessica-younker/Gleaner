@@ -21,20 +21,23 @@ app.controller("RaterCtrl", function($scope, CardFactory, AuthFactory, $location
     
 	$scope.submitRating = function(gleanerToBeRated){
 		$scope.newRating.gleanerToBeRated = $scope.gleanerToBeRated;
-        console.log("add new rating", gleanerToBeRated);
+        console.log("gleanerToBeRated", gleanerToBeRated);
         RatingFactory.postRating($scope.newRating)
         .then(function(response){
 	        RatingFactory.getAllRatings(gleanerToBeRated)
 			.then(function(ratingCollection) {
 				let ratings = ratingCollection;
-					console.log("ratingscollection", ratings);
+
 				let gleanersRatings = ratings.filter(function(rating) {
+					console.log("ratingscollection", ratings);
+					console.log("rating.gleanerToBeRated", rating.gleanerToBeRated);
 					return rating.gleanerToBeRated === gleanerToBeRated;	
 				});	
 				let justRatings = gleanersRatings.map(function(rating){
-					//how return just numbers?
+					
 					return rating.rating;
 				});
+				console.log("justRAtins", justRatings);
 				justRatings = justRatings.filter(function(element) {
 					return element!== undefined;
 				});
@@ -43,16 +46,20 @@ app.controller("RaterCtrl", function($scope, CardFactory, AuthFactory, $location
 				    totalRating += justRatings[i];
 				}
 				let averageRating = totalRating / justRatings.length;
-				console.log("averageRating", averageRating);   
+		
+				$scope.newCard.rating = averageRating.toFixed(3);
+				console.log("rounded", $scope.newCard.rating);
+				CardFactory.updateCard($routeParams.cardId, $scope.newCard)
+			        .then(function successCallback(response) {
+			        	console.log("response:", response);
+        			});  
 			});
-				// console.log("justRatings", justRatings);
-				// console.log("gleanersRatings.rating", gleanersRatings.rating);
 		});
 
 				
 	};
 
-        console.log("you added a new rating:", $scope.newRating);
+        console.log("you added a new rating:", $scope.new);
         $scope.newRating = {};
 });
 
