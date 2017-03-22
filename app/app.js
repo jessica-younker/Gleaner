@@ -132,6 +132,11 @@ app.config(function($routeProvider){
         controller: "CommentCtrl",
         resolve: {isAuth}
     }).
+    when("/gleanerguild/:cardId", {
+        templateUrl: "partials/gleaner-detail.html",
+        controller: "GleanerDetailCtrl",
+        resolve: {isAuth}
+    }).
     otherwise("/login");
 });
 

@@ -1,10 +1,12 @@
 "use strict";
+
 app.controller("GleanerGuildCtrl", function($scope, $window, CardFactory, AuthFactory, $location){
 
 let user = AuthFactory.getUser();
 
 
 	$scope.signUp = function(){
+		console.log("youclicked sign up");
 		$location.url("/guildform");
 	};
 
@@ -33,7 +35,7 @@ let user = AuthFactory.getUser();
 	};
 
 	$scope.moreComments = function(cardId){
-		$location.url(`/morecomments/${cardId}`);
+		$location.url(`/gleanerguild/${cardId}`);
 	};
 
 	// console.log($scope.)

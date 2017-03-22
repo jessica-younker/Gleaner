@@ -8,7 +8,7 @@ app.controller("GuildFormCtrl", function($scope, $window, AuthFactory, $location
          $scope.btnTxt = "Submit Gleaner";
 
          $scope.newCard = {
-    	 	// img: ?
+    	 	image: "",
     	 	name: "",
     	 	skill: "",
     	 	phone: "",

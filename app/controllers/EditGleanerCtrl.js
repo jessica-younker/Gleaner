@@ -6,7 +6,7 @@ app.controller("EditGleanerCtrl", function($scope, $window, AuthFactory, $locati
 let user = AuthFactory.getUser();
      
     $scope.title = "Edit Gleaner";
-    $scope.btnText = "Update";
+    $scope.btnTxt = "Update";
     $scope.newCard = {};
 
     

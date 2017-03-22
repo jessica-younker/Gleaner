@@ -10,7 +10,7 @@ app.controller("NewHarvestCardCtrl", function($scope, CardFactory, $location, Au
     $scope.btnText2 = "Submit & Notify";
      
     $scope.newCard = {
-    	// img: ?
+    	image: "",
     	produce: "",
     	amount: "",
     	date: "",
