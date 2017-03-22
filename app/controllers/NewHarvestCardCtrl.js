@@ -5,7 +5,7 @@ app.controller("NewHarvestCardCtrl", function($scope, CardFactory, $location, Au
     $scope.searchText = FilterFactory;
     let user = AuthFactory.getUser();
 
-    $scope.title = "New Harvest";
+    $scope.title = "New Harvest Listing";
     $scope.btnText = "Submit";
     $scope.btnText2 = "Submit & Notify";
      
