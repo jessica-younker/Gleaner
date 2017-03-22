@@ -49,18 +49,12 @@ app.controller("RaterCtrl", function($scope, CardFactory, AuthFactory, $location
 				CardFactory.updateCard($routeParams.cardId, $scope.newCard)
 			        .then(function successCallback(response) {
 			        	console.log("response:", response);
-        			});  
-			});
-		});
+        			}); 
+        		$location.url("/gleanerguild");
 
-				
+			});
+		});			
 	};
         
         $scope.newRating = {};
 });
-
-	//push commentfield to db
-
-	//get info back..
-	// ...somehow ratings are averaged on each pull back
-	// ratings and comments are loaded with gleanerguild card

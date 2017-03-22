@@ -1,13 +1,15 @@
-<h3>All Harvest Listings<h3>
+<h3>Open Harvest Opportunities</h3>
 
-<div ng-repeat="card in cards | filter: {zipCode: ''} | orderBy: 'produce'">
-  <div class="panel panel-default">
-    <div class="panel-body">
- 
-      <div class="col-xs-7"><a ng-href="#!/cards/all/harvest/{{card.id}}">{{card.produce}}</a></div>
-      <div class="col-xs-2">{{card.amount}}</div>
-      <div class="col-xs-1">{{card.date}}</div>
-      
-    </div>
-  </div>
-</div>
+	<div class="row-fluid">
+	  <div class="col-md-3"  ng-repeat="card in cards | filter: {zipCode: ''} | orderBy: 'produce'">
+			<div class ="card-harvest">
+				<img class="image" src="{{card.image}}"> </br>
+				
+				<div><h4>Produce in Box: {{card.produce}} </div>
+
+				<div><h4>Where: {{card.farmName}}, {{card.zipCode}}</h4></div>
+
+				<div><h4>When?: {{card.date}} at {{card.time}}</h4></div>
+
+				<button class="btn btn-info listing" ng-click="cardDetails(card.id)">Sign Up</button>
+			</div>

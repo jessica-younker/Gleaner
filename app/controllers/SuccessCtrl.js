@@ -6,16 +6,8 @@ app.controller("SuccessCtrl", function($scope, CardFactory, AuthFactory, $locati
 
 	$scope.reservedItem = "Produce Box";
 	console.log("$scope.reservedItem");
-	$routeParams.cardId = "cardId";
 
-	$scope.cardDetails = function(cardId){
-    	CardFactory.getSingleCard($routeParams.cardId)
-        .then(function successCallback(response){
-            $scope.newCard = response;
-            console.log("response", response);
-            $location.url(`/cards/all/box/${cardId}`);
-        });
-    	
-		
-	};
+	$scope.cardDetails = function(){
+   		$location.url("/cards/all/box/");	
+	};   	
 });
