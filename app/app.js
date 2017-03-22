@@ -117,7 +117,7 @@ app.config(function($routeProvider){
         controller: "HarvestCardDetailCtrl",
         resolve: {isAuth}
     }).
-    when("/success", {
+    when("/success/:cardId", {
         templateUrl: "partials/success.html",
         controller: "SuccessCtrl",
         resolve: {isAuth}

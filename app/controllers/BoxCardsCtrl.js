@@ -4,7 +4,6 @@ app.controller("BoxCardsCtrl", function($scope, $routeParams, CardFactory, $loca
 
 	let user = AuthFactory.getUser();
     
-    //passing user to ensure authentication?
     CardFactory.getCards(user)
     .then(function(cardCollection){
         $scope.cards = cardCollection;

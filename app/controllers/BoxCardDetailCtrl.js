@@ -9,8 +9,12 @@ app.controller("BoxCardDetailCtrl", function($scope, CardFactory, $location, Aut
 	$scope.card = {};
 
 	let cardId = $routeParams.cardId;
-	 	console.log("cardId", cardId);
-		console.log("routeParams?", $routeParams.cardId);
+	 	
+	CardFactory.getSingleCard($routeParams.cardId)
+		.then(function successCallback(response){
+			console.log("getSingleItemresponse", response);
+			$scope.card = response;
+	});
 
 	$scope.reserveBox = function(){
 		console.log("you clicked reserve");
@@ -25,7 +29,7 @@ app.controller("BoxCardDetailCtrl", function($scope, CardFactory, $location, Aut
 			CardFactory.updateCard($routeParams.cardId, $scope.newCard)
 			.then(function successCallback(response) {
 			console.log("now look here", response);
-			$location.url("/success");
+			$location.url(`/success/${cardId}`);
 			});
 		});
 
