@@ -81,6 +81,17 @@
 
 }
 
+.logo {
+/*	height: 40%;
+	width: 90%;
+	float: left;*/
+}
+
+/*.navbar-brand {
+	bottom: 5px;
+	float: right;*/
+}
+
 .image {
 	alignment-baseline: center;
 	width: 300px;
@@ -92,15 +103,33 @@
 	border-color: black;
 	border-width: 1px;
 	margin-top: 5px;
-
 }
 
+.image-home {
+    width: 350px;
+    height: 190px;
+}
+
+.picture-frame {
+    width: 350px;
+    height: : 250px;
+    border-style: solid;
+    border-color: white;
+}
+/*.home-label {
+	left margin: 50%;
+}*/
+
+.top {
+	left: 50%;
+}
+
+.bottom {
+	left: 50%;
+}
 #choose-adventure{
 	background-image: url("images/barn.jpg");
     background-color: #cccccc;
-}
-
-
 }
 
 .box-card-detail {

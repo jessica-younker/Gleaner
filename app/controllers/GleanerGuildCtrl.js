@@ -1,4 +1,4 @@
-"use strict";
+	"use strict";
 
 app.controller("GleanerGuildCtrl", function($scope, $window, CardFactory, AuthFactory, $location){
 
@@ -13,6 +13,7 @@ let user = AuthFactory.getUser();
 	CardFactory.getCards()
 	.then(function(cardCollection) {
 		$scope.cards = cardCollection;
+		console.log("$scope.cards", $scope.cards);
 		$scope.guildCards = $scope.cards.filter(function(card) {	
 			return "skill" in card;
 		});

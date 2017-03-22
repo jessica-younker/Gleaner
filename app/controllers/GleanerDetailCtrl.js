@@ -1,37 +1,24 @@
 "use strict";
 
-app.controller("GleanerGuildDetailCtrl", function($scope, $window, CardFactory, AuthFactory, $location){
+app.controller("GleanerDetailCtrl", function($scope, $window, CardFactory, AuthFactory, $location, $routeParams){
 
 let user = AuthFactory.getUser();
 
 	$scope.card = {};
 
-	// let cardId = $routeParams.cardId;
+	let cardId = $routeParams.cardId;
+	console.log("CARDID IN GLEANDERASDG", cardId);
 	 	
-	// CardFactory.getSingleCard($routeParams.cardId)
-	// 	.then(function (response){
-	// 		console.log("getSingleItemresponse", response);
-	// 		$scope.card = response;
-	// });
-//timing issue
-	// $scope.reserveBox = function(){
-	// 	console.log("you clicked reserve");
-	// 	CardFactory.getSingleCard($routeParams.cardId)
-	// 	.then(function (response){
-	// 		$scope.newCard = response;
-	// 		let amount = response.numberAvailable;
-	// 		$scope.newCard.numberAvailable = amount - 1;
-	// 		console.log ("updatedAmount", $scope.newCard.numberAvailable);
-	// 		console.log("$scope.newCard", $scope.newCard);
-			
-	// 		CardFactory.updateCard($routeParams.cardId, $scope.newCard)
-	// 		.then(function (response) {
-	// 			console.log("now look here", response);
-	// 			$location.url(`/success/${cardId}`);
-	// 		});
-	// 	});
-
-	// };			
+	CardFactory.getSingleCard($routeParams.cardId)
+		.then(function (response){
+			console.log("getSingleItemresponse", response);
+			$scope.card = response;
+			console.log("$routeParams.cardId", $scope.card.id);
+	});
+	
+	$scope.rateGleaner = function(){
+		$location.url(`/rategleaner/${cardId}`);
+	};
 
 
 });
