@@ -15,5 +15,8 @@ app.controller("BoxCardsCtrl", function($scope, $routeParams, CardFactory, $loca
 		$location.url(`/cards/all/box/${cardId}`);
 		
 	};
+    $scope.shareProduce = function(){
+        $location.url("/chooseyouradventure");
+    };
 	
 });
