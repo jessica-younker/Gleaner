@@ -20,16 +20,10 @@ app.controller("HarvestCardDetailCtrl", function($scope, CardFactory, $location,
 		let message = "Hello Farmer! Please call me to talk about this harvest opportunity.";
         console.log("farmPhone", farmPhone);
    		TwilioFactory.sendSMS(farmPhone, message);
-   		
-   		$location.url("/success");
-   		}
-
-    };
-       
+   	};
+    $location.url("/success"); 
 
      
-
-
    
 
 	
