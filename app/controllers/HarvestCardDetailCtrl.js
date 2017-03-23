@@ -12,12 +12,29 @@ app.controller("HarvestCardDetailCtrl", function($scope, CardFactory, $location,
 		.then(function (response){
 			console.log("getSingleItemresponse", response);
 			$scope.card = response;
+			let farmPhone = $scope.card.farmPhone;
 	});
 
-	$scope.textGrower = function(number, message){
-    	TwilioFactory.sendSMS();
+
+	$scope.textGrower = function(farmPhone){
+		let message = "Hello Farmer! Please call me to talk about this harvest opportunity.";
+        console.log("farmPhone", farmPhone);
+   		TwilioFactory.sendSMS(farmPhone, message);
+   		
+   		$location.url("/success");
+   		}
+
     };
+       
+
+     
+
+
+   
+
 	
 });
 
 //ability to delete or edit card if user
+
+

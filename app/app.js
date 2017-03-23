@@ -119,7 +119,12 @@ app.config(function($routeProvider){
     }).
     when("/success/:cardId", {
         templateUrl: "partials/success.html",
-        controller: "SuccessCtrl",
+        controller: "BoxSuccessCtrl",
+        resolve: {isAuth}
+    }).
+    when("/success", {
+        templateUrl: "partials/success.html",
+        controller: "TextSuccessCtrl",
         resolve: {isAuth}
     }).
     when("/email", {

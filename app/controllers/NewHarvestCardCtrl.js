@@ -18,6 +18,7 @@ app.controller("NewHarvestCardCtrl", function($scope, CardFactory, $location, Au
     	farmName: "",
     	zipCode: "",
     	finePrint: "",
+        farmPhone: "",
         uid: user
     };
 
@@ -53,6 +54,7 @@ app.controller("NewHarvestCardCtrl", function($scope, CardFactory, $location, Au
                 phoneArray.forEach(function(phone){
                     TwilioFactory.sendSMS(phone, message);
                 });
+                $location.url("/success");
             }); 
         });    
     
