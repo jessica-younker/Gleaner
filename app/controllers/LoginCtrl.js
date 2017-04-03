@@ -4,20 +4,17 @@
 
 app.controller("LoginCtrl", function($scope, $window, AuthFactory, $location, CardFactory){
 	
-console.log("LoginCtrl is loaded");
 	$scope.account = {
 		email: "",
 		password: ""
 	};
-
-//how to actually alert (vs console log) error messages?
 
 	let logout = () => {
 		console.log("logout clicked");
 		AuthFactory.logoutUser()
 		.then(function(data){
 			console.log("logged out?", data);
-			$window.location.url = "#!/login";
+			$location.url("#!/login");
 		}, function(error){
 			console.log("error occured on logout");
 		});
@@ -29,7 +26,7 @@ console.log("LoginCtrl is loaded");
 	}
 
 	$scope.register = () => {
-    	console.log("you clicked register");
+    	console.log("you clicked register and are autologged in");
 	    AuthFactory.createUser({
 	      email: $scope.account.email,
 	      password: $scope.account.password
@@ -43,14 +40,14 @@ console.log("LoginCtrl is loaded");
   	};
 
   	$scope.login = () => {
-    	console.log("you clicked login (or register and are autologged in");
-    	AuthFactory
-	    .loginUser($scope.account)
+    	console.log("you clicked login");
+    	AuthFactory.loginUser($scope.account)
 	    .then( () => {
 	        // $scope.isLoggedIn = true;
 	        // console.log("UserCtrl: user is loggedIn", $scope.isLoggedIn );
-	        // $scope.$apply();
-	        // $window.location.href = "#!/items/list";
+	        $location.path("/home");
+	        $scope.$apply();
+	     
 	    });
 	};
 
@@ -60,11 +57,9 @@ console.log("LoginCtrl is loaded");
 		.then(function(result) {
 	    	var user = result.user.uid;
 	    	console.log("logged in user:", user);
-	    	//Once logged in, go to another view
 	    	$location.path("/home");
 	    	$scope.$apply();
 	  	}).catch(function(error) {
-	    	// Handle the Errors.
 	    	console.log("error with google login", error);
 	    	var errorCode = error.code;
 	    	var errorMessage = error.message;
@@ -72,9 +67,6 @@ console.log("LoginCtrl is loaded");
 	    	var email = error.email;
 	    	// The firebase.auth.AuthCredential type that was used.
 	    	var credential = error.credential;
-	    	// ...
 	  	});
 	};
-
-
 });

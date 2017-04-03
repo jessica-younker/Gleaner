@@ -1,49 +1,148 @@
-/*body {
-	background: #eee !important;	
+.card-box {
+	border-color: black;
+	border-style: solid;
+	border-width: 2px;
+	margin-top: 5px;
+	margin-left: 7px;
+	height: 415px;
+	display: inline-block;
+	padding-left: 10px;
+	background-color: lightblue;
 }
 
-.wrapper {	
-	margin-top: 80px;
-  margin-bottom: 80px;
+.card-harvest {
+	border-color: black;
+	border-style: solid;
+	border-width: 2px;
+	margin-top: 5px;
+	margin-left: 7px;
+	height: 415px;
+	display: inline-block;
+	padding-left: 10px;
+	background-color: orange;
 }
 
-.form-signin {
-  max-width: 380px;
-  padding: 15px 35px 45px;
-  margin: 0 auto;
-  background-color: #fff;
-  border: 1px solid rgba(0,0,0,0.1);  
+.card-farmer {
+	border-color: black;
+	border-style: dashed;
+	border-width: 2px;
+	margin-top: 5px;
+	margin-left: 7px;
+	height: 415px;
+	display: inline-block;
+	padding-left: 10px;
+	background-color: pink;
+}
 
-  .form-signin-heading,
-	.checkbox {
-	  margin-bottom: 30px;
-	}
+.card-gleaner {
+	border-color: black;
+	border-style: solid;
+	border-width: 2px;
+	margin-top: 5px;
+	margin-left: 7px;
+	height: 415px;
+	display: inline-block;
+	padding-left: 10px;
+	background-color: lightgreen;
+}
 
-	.checkbox {
-	  font-weight: normal;
-	}
+.more-gleaner {
+	left:25%;
+	width:110px;
+	bottom:5px;
+}
 
-	.form-control {
-	  position: relative;
-	  font-size: 16px;
-	  height: auto;
-	  padding: 10px;
-		@include box-sizing(border-box);
+.rate-gleaner{
+	left:25%;
+	width:110px;
+	bottom:5px;
+}
 
-		&:focus {
-		  z-index: 2;
-		}
-	}
+.listing {
+	position:absolute; 
+	margin-left:-50px;
+	left:45%;
+	width:110px;
+	height: 34px;
+	bottom:5px;
+}
 
-	input[type="text"] {
-	  margin-bottom: -1px;
-	  border-bottom-left-radius: 0;
-	  border-bottom-right-radius: 0;
-	}
+.delete {
+	left:25%;
+	width:110px;
+	bottom:5px;
 
-	input[type="password"] {
-	  margin-bottom: 20px;
-	  border-top-left-radius: 0;
-	  border-top-right-radius: 0;
-	}
+}
+
+.edit {
+	right:25%;
+	width:110px;
+	bottom:5px;
+
+}
+
+.logo {
+	height: 60px;
+	width: 200px;
+	float: left;
+	/*position: absolute;*/
+}
+
+.navbar-brand {
+	/*bottom: 5px;*/
+	/*float: right;*/
+}
+
+.image {
+	alignment-baseline: center;
+	width: 300px;
+	height: 200px;
+	margin-left: 5px;
+	margin-right: 5px;
+	display: block;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+	margin-top: 5px;
+}
+
+.imagehome {
+    width: 350px;
+    height: 190px;
+}
+
+.picture-frame {
+    width: 350px;
+    height: : 250px;
+    border-style: solid;
+    border-color: white;
+}
+/*.home-label {
+	left margin: 50%;
 }*/
+
+.top {
+	left: 50%;
+}
+
+.bottom {
+	left: 50%;
+}
+#choose-adventure{
+	background-image: url("images/barn.jpg");
+    background-color: #cccccc;
+}
+
+.box-card-detail {
+	border-color: black;
+
+}
+
+.harvest-card-detal {
+	
+}
+
+.card-detail-image {
+	max-height: 190px;
+	max-width: 300px;
+}

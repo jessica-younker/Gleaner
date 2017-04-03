@@ -31,7 +31,6 @@ app.factory("AuthFactory", function($location){
 		return firebase.auth().signOut();
 	};
 
-//what is this doing exactly?
 	let isAuthenticated = function (){
 		console.log("in AuthFactory.isAuthenticated");
 

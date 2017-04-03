@@ -117,6 +117,31 @@ app.config(function($routeProvider){
         controller: "HarvestCardDetailCtrl",
         resolve: {isAuth}
     }).
+    when("/success/:cardId", {
+        templateUrl: "partials/success.html",
+        controller: "BoxSuccessCtrl",
+        resolve: {isAuth}
+    }).
+    when("/success", {
+        templateUrl: "partials/success.html",
+        controller: "TextSuccessCtrl",
+        resolve: {isAuth}
+    }).
+    when("/email", {
+        templateUrl: "partials/email.html",
+        controller: "EmailCtrl",
+        resolve: {isAuth}
+    }).
+    when("/morecomments/:cardId", {
+        templateUrl: "partials/more-comments.html",
+        controller: "CommentCtrl",
+        resolve: {isAuth}
+    }).
+    when("/gleanerguild/:cardId", {
+        templateUrl: "partials/gleaner-detail.html",
+        controller: "GleanerDetailCtrl",
+        resolve: {isAuth}
+    }).
     otherwise("/login");
 });
 

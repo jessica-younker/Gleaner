@@ -17,12 +17,8 @@ app.controller("FarmerCardsCtrl", function($scope, CardFactory, AuthFactory, $lo
 	$scope.deleteListing = function(cardId){
 	    console.log("delete this card", cardId);
 	    CardFactory.deleteCard(cardId)
-        .then(function(response){
-            CardFactory.getCards(user).then(function(cardCollection){
-            	console.log("$scope.cards", $scope.cards);
-                $scope.cards = cardCollection;
-                $location.url("#!/farmerscards");
-            });
+        .then(function(){
+        	$location.url("#!/farmerscards");
         });
 	    
 	};
@@ -33,7 +29,7 @@ app.controller("FarmerCardsCtrl", function($scope, CardFactory, AuthFactory, $lo
 		CardFactory.getSingleCard($routeParams.cardId)
 		.then(function successCallback(response){
 			$scope.newCard = response;
-			console.log("$scope.newBoxCard", $scope.newCard);
+			console.log("$scope.newCard", $scope.newCard);
 			if ("cost" in $scope.newCard) {
 				$location.url(`/cards/${cardId}/edit/box`);
 			} else {
@@ -46,6 +42,5 @@ app.controller("FarmerCardsCtrl", function($scope, CardFactory, AuthFactory, $lo
 
 });
 
-
-
+ 
    

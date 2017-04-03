@@ -1,12 +1,16 @@
+  <br>
+  <br>
+  <br>
 <div class="row">
   <div class="col-xs-6">
+  
     <h4>Login with your Google account</h4>
     <button class="btn btn-info" ng-click="loginGoogle()">Sign In</button>
   </div>
 
   <div class="col-xs-6 text-right">
     <section class="auth-form">
-    <h4>Login/Register with Email</h4>
+    <h4>Don't have Gmail? Enter your info here: </h4>
     <div>
       Email: <input type="text" autofocus="true"  ng-model="account.email">
     </div>
@@ -14,9 +18,9 @@
       Password: <input type="password" ng-model="account.password">
     </div>
     <div>
-      <button class="btn btn-info" ng-click="login()">Login</button>
+      <button class="btn btn-success" ng-click="login()">Login</button>
 
-      <button class="btn btn-default" ng-click="register()">Register</button>
+      <button class="btn btn-success" ng-click="register()">Register</button>
     </div>
     </section>
   </div>

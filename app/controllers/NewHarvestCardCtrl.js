@@ -1,16 +1,16 @@
-"use strict";
+    "use strict";
 
 app.controller("NewHarvestCardCtrl", function($scope, CardFactory, $location, AuthFactory, FilterFactory, TwilioFactory){
 	 
     $scope.searchText = FilterFactory;
     let user = AuthFactory.getUser();
 
-    $scope.title = "New Harvest";
+    $scope.title = "New Harvest Listing";
     $scope.btnText = "Submit";
     $scope.btnText2 = "Submit & Notify";
      
     $scope.newCard = {
-    	// img: ?
+    	image: "",
     	produce: "",
     	amount: "",
     	date: "",
@@ -18,6 +18,7 @@ app.controller("NewHarvestCardCtrl", function($scope, CardFactory, $location, Au
     	farmName: "",
     	zipCode: "",
     	finePrint: "",
+        farmPhone: "",
         uid: user
     };
 
@@ -42,20 +43,28 @@ app.controller("NewHarvestCardCtrl", function($scope, CardFactory, $location, Au
             .then(function(cardCollection) {
                 let cards = cardCollection;
                 let guildCards = cards.filter(function(card) {   
+                
                     return card.phone;  
                 });
+                console.log("guildCards", guildCards);
+
                 let phoneArray = guildCards.map(function(card) {
+
                     return card.phone;
                 });
+                console.log("phoneArray mapped guildCards", phoneArray);
      
-                let message = "Hello Gleaner! There is a hot new harvest opportunity. Here's the info: " + `http://localhost:8080/#!/cards/all/harvest/${response.data.name}`;
+                let message = "Hello Gleaner! A hot new harvest opportunity has just been posted. Here's the info: " + `http://localhost:8080/#!/cards/all/harvest/${response.data.name}`;
                 console.log ("message", message);
                 phoneArray.forEach(function(phone){
                     TwilioFactory.sendSMS(phone, message);
                 });
+                $location.url("/success");
             }); 
         });    
     
     };       
         
 });
+
+//filter phoneArray so that only gleaners with specific ratings are contacted

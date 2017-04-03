@@ -1,18 +1,22 @@
-<h1>see individual farmer's cards</h1>
+<h2>Your Listings</h2>
+<h5>Change your mind? Click <a href="#!/boxoharvest"> here</a> to create a completely new listing. </h5>
+  <div class="row-fluid">
+    <div class="col-md-3"  ng-repeat="card in farmersCards | orderBy: 'produce'">
+      <div class ="card-farmer">
+        <img class="image" src="{{card.image}}"> </br>
+        
+        <div><h4>Produce in Box: {{card.produce}}</h4></div>
 
-<div ng-repeat="card in farmersCards | orderBy: 'produce'">
-  <div class="panel panel-default">
-    <div class="panel-body">
- 
-      <div class="col-xs-7">{{card.produce}}</a></div>
-      <div class="col-xs-2">{{card.amount}}</div>
-      <div class="col-xs-1">{{card.date}}</div>
-      <div class="col-xs-1"><button class="btn btn-danger" ng-click="deleteListing(card.id)">Delete Listing</button></div>
-      <br>
-      <div class="col-xs-1"><button class="btn btn-info" ng-click="editCard(card.id)">Edit Listing</button></div>
+        <div><h5>Fine Print: {{card.finePrint}}</h5></div>
+
+        <div><h4>Date: {{card.date}}</h4></div>
+
+        <div class="button-box">
+          <button class="btn btn-info edit" ng-click="editCard(card.id)">Edit Listing</button>
+          <button class="btn btn-warning delete" ng-click="deleteListing(card.id)">Delete Listing</button>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
 
-<!-- have link to add new listing on this page -->
