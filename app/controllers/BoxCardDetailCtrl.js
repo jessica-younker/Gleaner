@@ -7,7 +7,7 @@ app.controller("BoxCardDetailCtrl", function($scope, CardFactory, $location, Aut
     
     $scope.title = "Box Details";
 	$scope.card = {};
-
+	
 	let cardId = $routeParams.cardId;
 	 	
 	CardFactory.getSingleCard($routeParams.cardId)
@@ -21,10 +21,13 @@ app.controller("BoxCardDetailCtrl", function($scope, CardFactory, $location, Aut
 		CardFactory.getSingleCard($routeParams.cardId)
 		.then(function (response){
 			$scope.newCard = response;
-			let amount = response.numberAvailable;
-			$scope.newCard.numberAvailable = amount - 1;
-			console.log ("updatedAmount", $scope.newCard.numberAvailable);
+			console.log("newCard", $scope.newCard);
+			let amount = response.updatedAvailability;
+			$scope.newCard.updatedAvailability = amount - 1;
+			console.log ("updatedAmount", $scope.newCard.updatedAvailability);
 			console.log("$scope.newCard", $scope.newCard);
+			
+			
 			
 			CardFactory.updateCard($routeParams.cardId, $scope.newCard)
 			.then(function (response) {

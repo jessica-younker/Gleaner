@@ -5,11 +5,11 @@
       <div class ="card-farmer">
         <img class="image" src="{{card.image}}"> </br>
         
-        <div><h4>Produce in Box: {{card.produce}}</h4></div>
+        <div><h4>Listing: {{card.produce || card.name}}</h4></div>
+        <div><h5>{{card.date}}</h5></div>
+        <div><h4>Number ordered:{{card.numberAvailable-card.updatedAvailability}}</h4></div>
+        
 
-        <div><h5>Fine Print: {{card.finePrint}}</h5></div>
-
-        <div><h4>Date: {{card.date}}</h4></div>
 
         <div class="button-box">
           <button class="btn btn-info edit" ng-click="editCard(card.id)">Edit Listing</button>

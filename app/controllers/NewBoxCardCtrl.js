@@ -19,21 +19,20 @@ app.controller("NewBoxCardCtrl", function($scope, CardFactory, AuthFactory, $loc
 	 	orderBy: "",
 	 	farmName: "",
 	 	finePrint: "",
-	 	reserved: null,
+	 	updatedAvailability: null,
         uid: user
 	 };
 	 //ability to autodeduct numberavailable w/signups
 
 	$scope.addNewCard = function(){
+		$scope.newCard.updatedAvailability = $scope.newCard.numberAvailable;
         console.log("add new card");
         CardFactory.postCard($scope.newCard)
         .then(function(response){
         	$location.url("/cards/all/box");
         });
-        // $scope.newTask.isCompleted = false;
-        // $scope.newTask.id = $scope.items.length;
         console.log("you added a new box card:", $scope.newCard);
-        // $scope.items.push($scope.newTask);
+        
         $scope.newCard = {};
     };
 });

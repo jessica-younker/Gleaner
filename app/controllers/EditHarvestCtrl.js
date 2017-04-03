@@ -7,7 +7,7 @@ app.controller("EditHarvestCtrl", function($scope, CardFactory, AuthFactory, $lo
 	$scope.title = "Edit Harvest Listing";
 	$scope.btnText = "Update";
 	$scope.newCard = {};
-    $scope.btnText2 = "Update & Notify";
+  $scope.btnText2 = "Update & Notify";
 
   
 	CardFactory.getSingleCard($routeParams.cardId)
