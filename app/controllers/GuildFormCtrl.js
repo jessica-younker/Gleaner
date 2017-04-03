@@ -32,4 +32,3 @@ app.controller("GuildFormCtrl", function($scope, $window, AuthFactory, $location
 });
 
 //how to limit one gleaner card per user
-//use route params to carry cardid to raterctrl?

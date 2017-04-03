@@ -43,13 +43,18 @@ app.controller("NewHarvestCardCtrl", function($scope, CardFactory, $location, Au
             .then(function(cardCollection) {
                 let cards = cardCollection;
                 let guildCards = cards.filter(function(card) {   
+                
                     return card.phone;  
                 });
+                console.log("guildCards", guildCards);
+
                 let phoneArray = guildCards.map(function(card) {
+
                     return card.phone;
                 });
+                console.log("phoneArray mapped guildCards", phoneArray);
      
-                let message = "Hello Gleaner! There is a hot new harvest opportunity. Here's the info: " + `http://localhost:8080/#!/cards/all/harvest/${response.data.name}`;
+                let message = "Hello Gleaner! A hot new harvest opportunity has just been posted. Here's the info: " + `http://localhost:8080/#!/cards/all/harvest/${response.data.name}`;
                 console.log ("message", message);
                 phoneArray.forEach(function(phone){
                     TwilioFactory.sendSMS(phone, message);
@@ -61,3 +66,5 @@ app.controller("NewHarvestCardCtrl", function($scope, CardFactory, $location, Au
     };       
         
 });
+
+//filter phoneArray so that only gleaners with specific ratings are contacted
