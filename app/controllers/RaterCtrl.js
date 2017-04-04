@@ -44,6 +44,7 @@ app.controller("RaterCtrl", function($scope, CardFactory, AuthFactory, $location
 
 				let averageRating = totalRating / justRatings.length;
 				$scope.newCard.rating = averageRating.toFixed(3);
+		
 				$scope.newCard.comment += ` "${$scope.newRating.comment}"`;
 
 				CardFactory.updateCard($routeParams.cardId, $scope.newCard)
