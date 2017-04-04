@@ -142,6 +142,11 @@ app.config(function($routeProvider){
         controller: "GleanerDetailCtrl",
         resolve: {isAuth}
     }).
+    when("/farmertexted", {
+        templateUrl: "partials/farmer-text-success.html",
+        controller: "FarmerTextSuccessCtrl",
+        resolve: {isAuth}
+    }).
     otherwise("/login");
 });
 

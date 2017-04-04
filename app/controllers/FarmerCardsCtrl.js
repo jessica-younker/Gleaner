@@ -5,13 +5,15 @@ app.controller("FarmerCardsCtrl", function($scope, CardFactory, AuthFactory, $lo
 	let user = AuthFactory.getUser();
 	$scope.farmer = user;
 
+
 	CardFactory.getCards()
 	.then(function(cardCollection) {
 		$scope.cards = cardCollection;
 
 		$scope.farmersCards = $scope.cards.filter(function(card) {
-			return card.uid === $scope.farmer;	
+			return card.uid === $scope.farmer && !card.skill;	
 		});	
+
 	});
 
 	$scope.deleteListing = function(cardId){
