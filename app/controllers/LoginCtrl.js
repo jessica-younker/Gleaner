@@ -1,7 +1,5 @@
 "use strict";
 
-//login--after successful login, take to page with links to either edit or add new for farmers
-
 app.controller("LoginCtrl", function($scope, $window, AuthFactory, $location, CardFactory){
 	
 	$scope.account = {

@@ -1,7 +1,6 @@
 "use strict";
 
-
-app.controller("BoxCardDetailCtrl", function($scope, CardFactory, $location, AuthFactory, FilterFactory, $routeParams){
+app.controller("BoxCardDetailCtrl", function($scope, CardFactory, $location, AuthFactory, $routeParams){
 
 	let user = AuthFactory.getUser();
     
@@ -12,26 +11,18 @@ app.controller("BoxCardDetailCtrl", function($scope, CardFactory, $location, Aut
 	 	
 	CardFactory.getSingleCard($routeParams.cardId)
 		.then(function (response){
-			console.log("getSingleItemresponse", response);
 			$scope.card = response;
 	});
 //timing issue
 	$scope.reserveBox = function(){
-		console.log("you clicked reserve");
 		CardFactory.getSingleCard($routeParams.cardId)
 		.then(function (response){
 			$scope.newCard = response;
-			console.log("newCard", $scope.newCard);
 			let amount = response.updatedAvailability;
 			$scope.newCard.updatedAvailability = amount - 1;
-			console.log ("updatedAmount", $scope.newCard.updatedAvailability);
-			console.log("$scope.newCard", $scope.newCard);
-			
-			
 			
 			CardFactory.updateCard($routeParams.cardId, $scope.newCard)
 			.then(function (response) {
-				console.log("now look here", response);
 				$location.url(`/success/${cardId}`);
 			});
 		});
@@ -39,4 +30,3 @@ app.controller("BoxCardDetailCtrl", function($scope, CardFactory, $location, Aut
 	};			
 });
 
-//add ability to edit and delete if user from this view

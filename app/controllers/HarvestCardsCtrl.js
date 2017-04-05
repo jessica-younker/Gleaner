@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("HarvestCardsCtrl", function($scope, CardFactory, $location, AuthFactory, FilterFactory, $routeParams){
+app.controller("HarvestCardsCtrl", function($scope, CardFactory, $location, AuthFactory, $routeParams){
 	
 	let user = AuthFactory.getUser();
    
@@ -11,13 +11,6 @@ app.controller("HarvestCardsCtrl", function($scope, CardFactory, $location, Auth
 
     $scope.cardDetails = function(cardId){
     	$routeParams.cardId = cardId;
-    	console.log("RP in boxcarctrl", $routeParams.cardId);
-		$location.url(`/cards/all/harvest/${cardId}`);
-		
-	};
-
-
-
-
-	
+		$location.url(`/cards/all/harvest/${cardId}`);	
+	};	
 });

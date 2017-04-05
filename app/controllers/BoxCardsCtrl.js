@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("BoxCardsCtrl", function($scope, $routeParams, CardFactory, $location, AuthFactory, FilterFactory){
+app.controller("BoxCardsCtrl", function($scope, $routeParams, CardFactory, $location, AuthFactory){
 
 	let user = AuthFactory.getUser();
     
@@ -11,7 +11,6 @@ app.controller("BoxCardsCtrl", function($scope, $routeParams, CardFactory, $loca
 
     $scope.cardDetails = function(cardId){
     	$routeParams.cardId = cardId;
-    	console.log("RP in boxcarctrl", $routeParams.cardId);
 		$location.url(`/cards/all/box/${cardId}`);
 		
 	};

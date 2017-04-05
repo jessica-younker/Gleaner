@@ -1,8 +1,7 @@
 "use strict";
-app.controller("EditGleanerCtrl", function($scope, $window, AuthFactory, $location, CardFactory, $routeParams){
 
-//sign up button clicks to form
-//click on gleaner card gets detailed view w/ ability to add "voucher" and comment if you are a farmer
+app.controller("EditGleanerCtrl", function($scope, AuthFactory, $location, CardFactory){
+
 let user = AuthFactory.getUser();
      
     $scope.title = "Edit Gleaner";
@@ -13,11 +12,9 @@ let user = AuthFactory.getUser();
     CardFactory.getCards()
         .then(function(cardCollection) {
             $scope.cards = cardCollection;
-            console.log("$scope.cards", $scope.cards);
             $scope.newCard = $scope.cards.find(function(card) {
                 return card.uid === user && "skill" in card;  
             }); 
-            console.log("$scope.gleanerCard", $scope.newCard);
         });
     
 	$scope.addNewCard = function(){
@@ -31,7 +28,6 @@ let user = AuthFactory.getUser();
         CardFactory.deleteCard($scope.newCard.id)
         .then(function(response){
             CardFactory.getCards(user).then(function(cardCollection){
-                console.log("$scope.cards", $scope.cards);
                 $scope.cards = cardCollection;
                 $location.url("#!/gleanerguild");
             });

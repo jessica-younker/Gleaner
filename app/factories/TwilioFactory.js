@@ -16,15 +16,11 @@ app.factory("TwilioFactory", function(TwilioCreds, $http, $base64, $httpParamSer
 			To: `+1${number}`,
 			MessagingServiceSid: TwilioCreds.MessagingServiceSid,
 			Body: message,
-
 		};
 
 		let URL = `${baseURL}/${TwilioCreds.SID}/Messages`;
-		console.log("sending an sms: URL", URL);
-		console.log("sending an sms: data", data);
 
 		return $http.post(URL, $httpParamSerializer(data), {headers: headers});
-
 	};
 
 	return {sendSMS};	

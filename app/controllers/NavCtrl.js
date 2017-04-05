@@ -1,4 +1,5 @@
 "use strict";
+
 app.controller("NavCtrl", function($scope, $window){
 
     $scope.isLoggedIn = false;
@@ -7,10 +8,9 @@ app.controller("NavCtrl", function($scope, $window){
 		if (user) {
 			$scope.isLoggedIn = true;
 			console.log("currentUser logged in", $scope.isLoggedIn);
-		}else{
+		} else {
 			$scope.isLoggedIn = false;
 			console.log("currentUser logged in", $scope.isLoggedIn);
-			//$window.location forces the page to completely reload
 			$window.location.href = "#!/login";
 		}
 	});

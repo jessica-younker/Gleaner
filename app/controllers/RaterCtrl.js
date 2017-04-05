@@ -12,7 +12,6 @@ app.controller("RaterCtrl", function($scope, CardFactory, AuthFactory, $location
 		gleanerToBeRated: ""
 	};
 
-	console.log("routeparams in ratercontrol", $routeParams.cardId);
     CardFactory.getSingleCard($routeParams.cardId)
         .then(function successCallback(response){
             $scope.newCard = response;
@@ -21,7 +20,6 @@ app.controller("RaterCtrl", function($scope, CardFactory, AuthFactory, $location
     
 	$scope.submitRating = function(gleanerToBeRated){
 		$scope.newRating.gleanerToBeRated = $scope.gleanerToBeRated;
-        console.log("$scope.newRating.comment", $scope.newRating.comment);
         RatingFactory.postRating($scope.newRating)
         .then(function(response){
 	        RatingFactory.getAllRatings(gleanerToBeRated)
@@ -49,13 +47,10 @@ app.controller("RaterCtrl", function($scope, CardFactory, AuthFactory, $location
 
 				CardFactory.updateCard($routeParams.cardId, $scope.newCard)
 			        .then(function successCallback(response) {
-			        	console.log("response:", response);
         			}); 
         		$location.url("/gleanerguild");
-
 			});
 		});			
-	};
-        
-        $scope.newRating = {};
+	};   
+    $scope.newRating = {};
 });
