@@ -1,9 +1,8 @@
 "use strict";
 
 app.factory("RatingFactory", ($q, $http, FBCreds) => {
-
+ 
 	let getAllRatings = (user) => {
-	
 		return $q((resolve, reject) => {
 			$http.get(`${FBCreds.databaseURL}/ratings.json`)
 			.then((ratingObject) => {

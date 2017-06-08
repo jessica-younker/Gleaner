@@ -4,20 +4,62 @@ The Green Gleaner was created over a 2-week period for my front-end capstone pro
 
 ## Motivation
 
-A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
+So much food is wasted in agricultural operations of all scales. This webapp  provides a marketplace and a financial incentive for farmers to sell their ugly produce to the people.
+
+## Technologies
+* [AngularJs](https://angularjs.org/) - Web framework
+* [npm](https://www.npmjs.com/) - Dependency management
+* [Grunt](https://gruntjs.com/) - Task manager
+* [Firebase](https://firebase.google.com/) - Data persistance 
+
+
+## Prerequisites
+You'll need Node Package Manger to run this application:
+[npm](https://www.npmjs.com/)
 
 ## Installation
-
-Clone the repo, install dependencies, runserver and navigate to http://localhost:8080/#!/ using your preferred browser. 
+Clone the repository from GitHub, install its dependencies, run Grunt, and then serve it up. 
 
 Commands to run:
 
-git clone https://github.com/
+```
+git clone https://github.com/jessica-younker/Green_Gleaner
 cd lib
 npm install
+grunt
+```
+
+In another terminal window:
+
+```
+hs
+```
+
+Then navigate to http://localhost:8080/#!/ using your preferred browser.
+You should see some errors regarding missing files in your console.
+
+```
+cd app/
+mkdir app/values && cd app/values
+touch fb-creds.js twilio-creds.js
+cd ../../
+```
+
+This project uses Twilio's SMS API so that farmers can easily commuicate with Gleaners about hot new gleaning opportunities and so that Gleaners can sign-up to harvest opportunities in a way that is convenient for farmers. To fully utilize this application, you'll want to get your Twilio credentials in order.
+
+In your text editor, navigate to the twilio-creds.js file you created.
+
+"use strict";
+
+app.constant("TwilioCreds", {
+    SID: "",
+    authToken: "",
+    MessagingServiceSid: "",
+    
+});
 
 
 
-## License
+## Acknowledgements
 
-A short snippet describing the license (MIT, Apache, etc.)
+Support your local farmer! 

@@ -1,9 +1,8 @@
 "use strict";
 
 app.factory("CardFactory", ($q, $http, FBCreds) => {
-
+//Returns all card objects from firebase
 	let getCards = (user) => {
-	
 		return $q((resolve, reject) => {
 			$http.get(`${FBCreds.databaseURL}/cards.json`)
 			.then((cardObject) => {
@@ -20,7 +19,7 @@ app.factory("CardFactory", ($q, $http, FBCreds) => {
 			});
 		});
 	};
-
+//Adds a card object to firebase
 	let postCard = (newCard) => {
 		return $q((resolve, reject) => {
 			$http.post(`${FBCreds.databaseURL}/cards.json`, JSON.stringify(newCard))
@@ -32,7 +31,7 @@ app.factory("CardFactory", ($q, $http, FBCreds) => {
 			});
 		});
 	};
-
+//Deletes a card object from firebase
 	let deleteCard = (cardId) => {
 		return $q((resolve, reject) => {
 			$http.delete(`${FBCreds.databaseURL}/cards/${cardId}.json`)
@@ -41,7 +40,7 @@ app.factory("CardFactory", ($q, $http, FBCreds) => {
 			});
 		});
 	};
-
+//Returns one specific card object from firebase
 	let getSingleCard = (cardId) => {
 		return $q(function(resolve, reject){
 			$http.get(`${FBCreds.databaseURL}/cards/${cardId}.json`)
@@ -53,7 +52,7 @@ app.factory("CardFactory", ($q, $http, FBCreds) => {
 			});
 		});
 	};
-
+//Edits one specific card object on firebase
 	let updateCard = (cardId, editedCard) => {
 		return $q(function(resolve, reject){
 			$http.patch(`${FBCreds.databaseURL}/cards/${cardId}.json`,

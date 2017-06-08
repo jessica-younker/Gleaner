@@ -1,7 +1,6 @@
 "use strict";
 
 app.factory("TwilioFactory", function(TwilioCreds, $http, $base64, $httpParamSerializer){
-	console.log("cruds", TwilioCreds);
 	
 	let auth = $base64.encode(`${TwilioCreds.SID}:${TwilioCreds.authToken}`);
 	let headers = {
