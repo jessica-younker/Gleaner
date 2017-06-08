@@ -1,0 +1,65 @@
+## Synopsis
+
+The Green Gleaner was created over a 2-week period for my front-end capstone project at the Nashville Software School. It is a web application that allows growers a way to post listings notifying the public of cosmetically-inferior produce they have available for sale or harvesting. The app allows farmers to post Boxes or Harvest Opportunities. Listings describe the content, quality, pick-up location, etc. of the boxed produce and harvest opportunities. The Gleaner Guild allows anyone to sign up to receive notifications via text of the the most current harvest opportunities. Farmers are encouraged to rate Gleaner Guild participants to limit the number of yahoos trying to come to their farms. As of 4/5/17 there is no payment processing integrated in the application, but farmers have access to a rudimentary inventory tracking system under "Your Account".
+
+## Motivation
+
+So much food is wasted in agricultural operations of all scales. This webapp  provides a marketplace and a financial incentive for farmers to sell their ugly produce to the people.
+
+## Technologies
+* [AngularJs](https://angularjs.org/) - Web framework
+* [npm](https://www.npmjs.com/) - Dependency management
+* [Grunt](https://gruntjs.com/) - Task manager
+* [Firebase](https://firebase.google.com/) - Data persistance 
+
+
+## Prerequisites
+You'll need Node Package Manger to run this application:
+[npm](https://www.npmjs.com/)
+
+## Installation
+Clone the repository from GitHub, install its dependencies, run Grunt, and then serve it up. 
+
+Commands to run:
+
+```
+git clone https://github.com/jessica-younker/Green_Gleaner
+cd lib
+npm install
+grunt
+```
+
+In another terminal window:
+
+```
+hs
+```
+
+Then navigate to http://localhost:8080/#!/ using your preferred browser.
+You should see some errors regarding missing files in your console.
+
+```
+cd app/
+mkdir app/values && cd app/values
+touch fb-creds.js twilio-creds.js
+cd ../../
+```
+
+This project uses Twilio's SMS API so that farmers can easily commuicate with Gleaners about hot new gleaning opportunities and so that Gleaners can sign-up to harvest opportunities in a way that is convenient for farmers. To fully utilize this application, you'll want to get your Twilio credentials in order.
+
+In your text editor, navigate to the twilio-creds.js file you created.
+
+"use strict";
+
+app.constant("TwilioCreds", {
+    SID: "",
+    authToken: "",
+    MessagingServiceSid: "",
+    
+});
+
+
+
+## Acknowledgements
+
+Support your local farmer! 

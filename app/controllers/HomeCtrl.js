@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("HomeCtrl", function($scope, $window, AuthFactory, $location, CardFactory){
+app.controller("HomeCtrl", function($scope, $location){
 	
 	$scope.findBox = function(){
 		$location.url("/cards/all/box");

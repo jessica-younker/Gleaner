@@ -1,19 +1,13 @@
 "use strict";
-// +16159134302
+
 var app = angular.module("Gleaner", ["ngRoute", "base64"]);
 
 let isAuth = (AuthFactory) => new Promise ( (resolve, reject) => {
-  console.log("running isAuth");
     AuthFactory.isAuthenticated()
     .then ( (userExists) => {
-        //welcome {{name}} on homepage
-    console.log("userExists", userExists);
         if (userExists){
-      console.log("Authenticated, go ahead.");
             resolve();
         }else {
-
-      console.log("Authentication rejected, go away.");
             reject();
         }
     });
@@ -28,10 +22,6 @@ app.config(function($routeProvider){
     when("/login", {
         templateUrl: "partials/login.html",
         controller: "LoginCtrl"
-    }).
-    when("/register", {
-        templateUrl: "partials/register.html",
-        controller: "RegisterCtrl"
     }).
     when("/home", {
         templateUrl: "partials/home.html",
@@ -85,11 +75,6 @@ app.config(function($routeProvider){
     when("/gleanerguild", {
         templateUrl: "partials/gleaner-guild.html",
         controller: "GleanerGuildCtrl",
-        resolve: {isAuth}
-    }).
-    when("/loginplz", {
-        templateUrl: "partials/please-login.html",
-        controller: "PlzLoginCtrl",
         resolve: {isAuth}
     }).
     when("/guildform", {
@@ -150,7 +135,6 @@ app.config(function($routeProvider){
     otherwise("/login");
 });
 
-//run when the app loads
 app.run(($location, FBCreds) => {
     let creds = FBCreds;
     let authConfig = {
@@ -158,7 +142,5 @@ app.run(($location, FBCreds) => {
         authDomain: creds.authDomain,
         databaseURL: creds.databaseURL
     };
-   
-    
     firebase.initializeApp(authConfig);
 });

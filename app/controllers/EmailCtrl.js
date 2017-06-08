@@ -1,7 +1,6 @@
 "use strict";
 
-
-app.controller("EmailCtrl", function($scope, CardFactory, $location, AuthFactory, FilterFactory, $routeParams){
+app.controller("EmailCtrl", function($scope, AuthFactory){
 
 	let user = AuthFactory.getUser();
 

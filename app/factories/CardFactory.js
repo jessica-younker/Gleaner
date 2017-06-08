@@ -1,18 +1,13 @@
 "use strict";
-console.log("hello from cardfactory");
 
 app.factory("CardFactory", ($q, $http, FBCreds) => {
-
+//Returns all card objects from firebase
 	let getCards = (user) => {
-		console.log("hello from IN getCards");
-	
 		return $q((resolve, reject) => {
-			console.log("cards url", `${FBCreds.databaseURL}/cards.json`);
 			$http.get(`${FBCreds.databaseURL}/cards.json`)
 			.then((cardObject) => {
 				let cards = [];
 				let cardCollection = cardObject.data;
-				console.log("cardCollection", cardCollection);
 				Object.keys(cardCollection).forEach((key) => {
 					cardCollection[key].id = key;
 					cards.push(cardCollection[key]);
@@ -24,7 +19,7 @@ app.factory("CardFactory", ($q, $http, FBCreds) => {
 			});
 		});
 	};
-
+//Adds a card object to firebase
 	let postCard = (newCard) => {
 		return $q((resolve, reject) => {
 			$http.post(`${FBCreds.databaseURL}/cards.json`, JSON.stringify(newCard))
@@ -36,9 +31,8 @@ app.factory("CardFactory", ($q, $http, FBCreds) => {
 			});
 		});
 	};
-
+//Deletes a card object from firebase
 	let deleteCard = (cardId) => {
-		console.log("delete in factory", cardId);
 		return $q((resolve, reject) => {
 			$http.delete(`${FBCreds.databaseURL}/cards/${cardId}.json`)
 			.then((ObjectFromFirebase) => {
@@ -46,7 +40,7 @@ app.factory("CardFactory", ($q, $http, FBCreds) => {
 			});
 		});
 	};
-
+//Returns one specific card object from firebase
 	let getSingleCard = (cardId) => {
 		return $q(function(resolve, reject){
 			$http.get(`${FBCreds.databaseURL}/cards/${cardId}.json`)
@@ -58,14 +52,8 @@ app.factory("CardFactory", ($q, $http, FBCreds) => {
 			});
 		});
 	};
-
-
-
+//Edits one specific card object on firebase
 	let updateCard = (cardId, editedCard) => {
-		//Properties with leading $$ characters will be stripped since AngularJS uses this notation internally.
-  	console.log("angularJSON", angular.toJson(editedCard));
-  	console.log("JSON.stringify", JSON.stringify(editedCard));
-  	
 		return $q(function(resolve, reject){
 			$http.patch(`${FBCreds.databaseURL}/cards/${cardId}.json`,
 				angular.toJson(editedCard))

@@ -1,9 +1,8 @@
 "use strict";
 
-app.controller("ChooseAdventureCtrl", function($scope, $routeParams, CardFactory, $location, AuthFactory){
+app.controller("ChooseAdventureCtrl", function($scope, $location, AuthFactory){
 
 	let user = AuthFactory.getUser();
-	console.log("user in advenutre", user );
 	$scope.cards = [];
 	
 	$scope.showTypes = function(){
