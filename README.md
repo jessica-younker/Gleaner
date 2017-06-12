@@ -4,7 +4,7 @@ The Green Gleaner was created over a 2-week period for my front-end capstone pro
 
 The Gleaner Guild allows lay people to sign up to receive notifications via SMS of hot new harvest opportunities and to reserve their spots for a harvest. Farmers can rate Gleaner Guild participants, affecting the gleaner's rating, as a measure to limit the number of yahoos trying to come to their farms. 
 
-As of 4/5/17 there is no payment processing integrated in the application, but farmers have access to a rudimentary inventory tracking system under "Your Account".
+As of 4/5/17 there is no payment processing integrated in the application, but farmers have access to a rudimentary inventory tracking system under `My Account`.
 
 ## Motivation
 
