@@ -40,7 +40,7 @@ hs
 ```
 
 Then navigate to http://localhost:8080/#!/ using your preferred browser.
-You should see some errors regarding missing files in your console. If you want to properly run this application, you'll need to add the following files:
+You should see some errors regarding missing files in your console. If you want to properly run this application, you'll need to add the following files (remember to un-comment out their script tags in index.html:
 
 ```
 cd app/
