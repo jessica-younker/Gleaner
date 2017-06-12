@@ -1,6 +1,10 @@
 ## Synopsis
 
-The Green Gleaner was created over a 2-week period for my front-end capstone project at the Nashville Software School. It is a web application that allows growers to post listings notifying the public of cosmetically-inferior produce they have available for sale or harvesting. The app allows farmers to post Produce Boxes or Harvest Opportunities. Listings describe the content, quality, pick-up location, etc. of the boxed produce and harvests. The Gleaner Guild allows anyone to sign up to receive notifications via text of the the most current harvest opportunities. Farmers are encouraged to rate Gleaner Guild participants to limit the number of yahoos trying to come to their farms. As of 4/5/17 there is no payment processing integrated in the application, but farmers have access to a rudimentary inventory tracking system under "Your Account".
+The Green Gleaner was created over a 2-week period for my front-end capstone project at the Nashville Software School. It is a web application that allows growers to post listings notifying the public of cosmetically-inferior produce available for sale or harvesting. The app allows farmers to post Produce Boxes or Harvest Opportunities. Listings describe the content, quality, pick-up location, etc. of the boxed produce and harvests. 
+
+The Gleaner Guild allows lay people to sign up to receive notifications via SMS of hot new harvest opportunities and to reserve their spots for a harvest. Farmers can rate Gleaner Guild participants, affecting the gleaner's rating, as a measure to limit the number of yahoos trying to come to their farms. 
+
+As of 4/5/17 there is no payment processing integrated in the application, but farmers have access to a rudimentary inventory tracking system under "Your Account".
 
 ## Motivation
 
@@ -12,7 +16,6 @@ So much food is wasted in agricultural operations of all scales because farms' r
 * [Grunt](https://gruntjs.com/) - Task manager
 * [Firebase](https://firebase.google.com/) - Data persistance 
 * [Twilio](https://twilio.com/) - SMS API 
-
 
 ## Prerequisites
 You'll need Node Package Manger to run this application:
@@ -61,8 +64,7 @@ app.constant("TwilioCreds", {
 });
 ```
 
-You'll need to get some creds with Firebase, too, in order to set up the right database for this application. At [Firebase](https://firebase.google.com/), set up an account.  
-Click `GO TO CONSOLE` at the top right of the screen to add the Green Gleaner to your projects.
+In order to set up a data base for this application, you'll need to get some cred with Firebase, too. At [Firebase](https://firebase.google.com/), create an account. Then click `GO TO CONSOLE` at the top right of the screen to add the Green Gleaner to your projects.
 From the Overview page, click the round red `</>` icon to retrieve your apiKey, authDomain, and databaseURL. Copy that info to the FBConfig.js you created according to this pattern:
 
 ```
