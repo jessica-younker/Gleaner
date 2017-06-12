@@ -1,16 +1,17 @@
 ## Synopsis
 
-The Green Gleaner was created over a 2-week period for my front-end capstone project at the Nashville Software School. It is a web application that allows growers a way to post listings notifying the public of cosmetically-inferior produce they have available for sale or harvesting. The app allows farmers to post Boxes or Harvest Opportunities. Listings describe the content, quality, pick-up location, etc. of the boxed produce and harvest opportunities. The Gleaner Guild allows anyone to sign up to receive notifications via text of the the most current harvest opportunities. Farmers are encouraged to rate Gleaner Guild participants to limit the number of yahoos trying to come to their farms. As of 4/5/17 there is no payment processing integrated in the application, but farmers have access to a rudimentary inventory tracking system under "Your Account".
+The Green Gleaner was created over a 2-week period for my front-end capstone project at the Nashville Software School. It is a web application that allows growers to post listings notifying the public of cosmetically-inferior produce they have available for sale or harvesting. The app allows farmers to post Produce Boxes or Harvest Opportunities. Listings describe the content, quality, pick-up location, etc. of the boxed produce and harvests. The Gleaner Guild allows anyone to sign up to receive notifications via text of the the most current harvest opportunities. Farmers are encouraged to rate Gleaner Guild participants to limit the number of yahoos trying to come to their farms. As of 4/5/17 there is no payment processing integrated in the application, but farmers have access to a rudimentary inventory tracking system under "Your Account".
 
 ## Motivation
 
-So much food is wasted in agricultural operations of all scales. This webapp  provides a marketplace and a financial incentive for farmers to sell their ugly produce to the people.
+So much food is wasted in agricultural operations of all scales because farms' regular markets often won't purchase cosmetically-inferior produce. This webapp  provides a marketplace and a financial incentive for farmers to sell their ugly produce to the people.
 
 ## Technologies
 * [AngularJs](https://angularjs.org/) - Web framework
 * [npm](https://www.npmjs.com/) - Dependency management
 * [Grunt](https://gruntjs.com/) - Task manager
 * [Firebase](https://firebase.google.com/) - Data persistance 
+* [Twilio](https://twilio.com/) - SMS API 
 
 
 ## Prerequisites
@@ -36,7 +37,7 @@ hs
 ```
 
 Then navigate to http://localhost:8080/#!/ using your preferred browser.
-You should see some errors regarding missing files in your console.
+You should see some errors regarding missing files in your console. If you want to properly run this application, you'll need to add the following files:
 
 ```
 cd app/
@@ -45,10 +46,11 @@ touch fb-creds.js twilio-creds.js
 cd ../../
 ```
 
-This project uses Twilio's SMS API so that farmers can easily commuicate with Gleaners about hot new gleaning opportunities and so that Gleaners can sign-up to harvest opportunities in a way that is convenient for farmers. To fully utilize this application, you'll want to get your Twilio credentials in order.
+This project uses Twilio's SMS API so that farmers can easily commuicate with Gleaners about hot new gleaning opportunities and so that Gleaners can sign-up to harvest opportunities in a way that is convenient for farmers. To fully utilize this application, you'll want to get your Twilio credentials in order at [Twilio](https://twilio.com/sms/api).
 
-In your text editor, navigate to the twilio-creds.js file you created.
+Once you've got your creds, navigate to the twilio-creds.js file you created and set it up like this:
 
+```
 "use strict";
 
 app.constant("TwilioCreds", {
@@ -57,8 +59,37 @@ app.constant("TwilioCreds", {
     MessagingServiceSid: "",
     
 });
+```
 
+You'll need to get some creds with Firebase, too, in order to set up the right database for this application. At [Firebase](https://firebase.google.com/), set up an account.  
+Click `GO TO CONSOLE` at the top right of the screen to add the Green Gleaner to your projects.
+From the Overview page, click the round red `</>` icon to retrieve your apiKey, authDomain, and databaseURL. Copy that info to the FBConfig.js you created according to this pattern:
 
+```
+"use strict";
+
+app.constant("FBCreds", {
+    apiKey: "",
+    authDomain: "",
+    databaseURL: ""    
+});
+```
+
+Return to the project Overview on Firebase and click the `Database` tab on the left sidebar. Select the `RULES` tab from the top menu. Add the following rules to the JSON script:
+
+```
+{
+  "rules": {
+    ".read": true,
+    ".write": true,
+      "cards": {
+        ".indexOn": ["uid"]
+      }
+  }
+}
+```
+
+Now select `Authentication` from the left sidebar. Choose `SIGN-IN METHOD` from the top menu and enable the Email/Password provider and Google. Now you're good to go!
 
 ## Acknowledgements
 
