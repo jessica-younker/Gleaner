@@ -1,0 +1,20 @@
+<h2>Available Produce Boxes</h2>
+
+<h5>Growers, click here to <a href="#!/cards/new/box">add</a> or <a href="#!/farmerscards">edit</a> your boxes</h5>
+	<div class="row-fluid">
+	  <div class="col-md-3"  ng-repeat="card in cards | filter: {boxSize: ''} | orderBy: 'produce'">
+			<div class ="card-box">
+				<img class="image" src="{{card.image}}"> </br>
+				
+				<div><h4>Produce in Box: {{card.produce}} </div>
+
+				<div><h4>Pick-up Location: {{card.pickUp}}</h4></div>
+
+				<div><h4>Cost: {{card.cost}}</h4></div>
+
+				<button class="btn btn-info listing" ng-click="cardDetails(card.id)">Ordering Info</button>
+			</div>
+	  </div>
+	</div>
+</div>
+ 

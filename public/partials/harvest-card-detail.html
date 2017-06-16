@@ -1,0 +1,31 @@
+<h2>Details about this "{{card.produce}}" harvest opportunity</h2>
+
+<content>
+  <card class="harvest-card-detail">
+    <div class="card-detail-image">  
+      <img src={{card.image}} class="card-detail-image" alt="image">
+    </div>
+    <br>
+    <div class="card-info">
+    	<label>What: </label>
+		<span class="headline">{{card.produce}}</span><br>
+		<label>Farm Name: </label>
+		<span class="headline">{{card.farmName}}</span><br>
+		<label>Zip Code: </label>
+		<span class="headline">{{card.zipCode}}</span><br>
+		<label>Fine Print: </label>
+		<span class="headline">{{card.finePrint}}</span><br>
+		<label>How much: </label>
+		<span class="headline">{{card.amount}}</span><br>
+		<label>Harvest Date: </label>
+		<span class="headline">{{card.date}}</span><br>
+		<label>Harvest Time: </label>
+		<span class="headline">{{card.time}}</span><br>
+		
+  		<label>Confirm this havest opportunity or ask Grower a question instantly!</label>
+
+      	<button type="button" class="btn btn-success" ng-click="textGrower(card.farmPhone)">Text Grower</button>	
+
+    </div>
+  </card>
+</content>

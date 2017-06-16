@@ -1,0 +1,26 @@
+<h2>Gleaner Guild</h2>
+<h4>The best gleaners around. Safe to let loose on anyone's farm.</h4>
+<br>
+<button class="btn btn-info" ng-click="signUp()">Sign Up!</button></div>
+<br>
+<br>
+  <div class="row-fluid">
+    <div class="col-md-3" ng-repeat="card in guildCards | orderBy: 'name'">
+      <div class ="card-gleaner">
+        <img class="image" src="{{card.image}}"> </br>
+        
+        <div><h4>{{card.name}} </div>
+        <div><h4>Rating: {{card.rating}}/4</h4></div>
+        <div><h4>Comments: {{card.comment}}</h4></div>
+        <button class="btn btn-success more-gleaner" ng-click="moreComments(card.id)">More Info</button>
+      
+        <button class="btn btn-info rate-gleaner" ng-click="rateGleaner(card.id)">Rate gleaner!</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+

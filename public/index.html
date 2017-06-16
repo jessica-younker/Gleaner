@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Green Gleaner</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	
+		<!-- 	<link rel="stylesheet" type="text/css" href="lib/node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+</head>
+
+<body ng-app="Gleaner">
+
+    <div ng-include="'partials/navbar.html'"></div>
+
+    <div class="col-xs-12" ng-view></div>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  	crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-base64/2.0.5/angular-base64.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
+
+    <!-- <script type="text/javascript" src="lib/node_modules/jquery/dist/jquery.min.js"></script> -->
+    
+	<!-- <script type="text/javascript" src="lib/node_modules/firebase/firebase.js"></script> -->
+	
+	<!-- <script type="text/javascript" src="lib/node_modules/angular/angular.min.js"></script> -->
+	
+	<!-- <script type="text/javascript" src="lib/node_modules/angular-route/angular-route.min.js"></script> -->
+
+	<!-- <script src="text/javascript" src="lib/node_modules/angular-base64/angular-base64.min.js"></script> -->
+
+	<!-- <script type="text/javascript" src="lib/node_modules/bootstrap/dist/js/bootstrap.min.js"></script> -->
+
+	
+	<script type="text/javascript" src="app/app.js"></script>
+	<script type="text/javascript" src="app/values/fb-creds.js"></script>
+	<!-- <script type="text/javascript" src="app/values/twilio-creds.js"></script> -->
+
+	<script type="text/javascript" src="app/controllers/NavCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/LoginCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/HomeCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/FarmerCardsCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/ChooseAdventureCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/BoxCardsCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/HarvestCardsCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/NewHarvestCardCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/NewBoxCardCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/FarmerCardsCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/BoxOHarvestCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/EditBoxCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/EditHarvestCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/GleanerGuildCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/GuildFormCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/EditGleanerCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/RaterCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/BoxCardDetailCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/HarvestCardDetailCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/BoxSuccessCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/TextSuccessCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/EmailCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/CommentCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/GleanerDetailCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/FarmerTextSuccessCtrl.js"></script>
+
+	<script type="text/javascript" src="app/factories/AuthFactory.js"></script>
+	<script type="text/javascript" src="app/factories/CardFactory.js"></script>
+	<script type="text/javascript" src="app/factories/TwilioFactory.js"></script>
+	<script type="text/javascript" src="app/factories/RatingFactory.js"></script>
+
+</body>
+</html>

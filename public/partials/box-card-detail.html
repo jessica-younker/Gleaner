@@ -1,0 +1,35 @@
+<h2>Details about this {{card.produce}} listing</h2>
+
+<content>
+  <card class="box-card-detail">
+    <div class="card-detail-image">  
+      <img src={{card.image}} class="card-detail-image" alt="image">
+    </div>
+    <div class="card-info">
+    	<label>What: </label>
+		<span class="headline">{{card.produce}}</span><br>
+		<label>Farm Name: </label>
+		<span class="headline">{{card.farmName}}</span><br>
+		<label>Fine Print: </label>
+		<span class="headline">{{card.finePrint}}</span><br>
+		<label>How Much: </label>
+		<span class="headline">{{card.boxSize}}</span><br>
+		<label>How Many Left?: </label>
+		<span class="headline">{{card.updatedAvailability}}</span><br>
+		<label>Pick-up Location: </label>
+		<span class="headline">{{card.pickUp}}</span><br>
+		<label>Pick-up Date: </label>
+		<span class="headline">{{card.date}}</span><br>
+		<label>Pick-up Time: </label>
+		<span class="headline">{{card.time}}</span><br>
+		<label>Cost: </label>
+		<span class="headline">{{card.cost}}</span><br>
+		<span class="headline"> </span>
+		<label>Order Deadline: </label>
+		<span class="headline">{{card.orderBy}}</span><br>
+		
+  		<button class="btn btn-default" ng-click="reserveBox(card.id)">Reserve A Box!</button>
+      
+    </div>
+  </card>
+</content>
