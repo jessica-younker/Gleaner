@@ -7,6 +7,6 @@ app.controller("TextSuccessCtrl", function($scope, AuthFactory, $location){
 	$scope.reservedItemMessage = "May this elite cadre of gleaners bring you great joy.";
 	
 	$scope.cardDetails = function(){
-   		$location.url("/cards/all/box/");	
+   		$location.url("/cards/all/harvest/");	
 	};   	
 });

@@ -8,6 +8,6 @@ app.controller("FarmerTextSuccessCtrl", function($scope, AuthFactory, $location)
 	$scope.reservedItemMessage = "They will be in touch with you about the details shortly.";
 
 	$scope.cardDetails = function(){
-   		$location.url("/cards/all/box/");	
+   		$location.url("/cards/all/harvest/");	
 	};   	
 });
